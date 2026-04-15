@@ -36,6 +36,11 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Saurabh Jha — UX Designer" },
       { property: "og:description", content: "UX Designer crafting intuitive digital products and design systems" },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Saurabh Jha — UX Designer" },
+      { name: "twitter:description", content: "UX Designer crafting intuitive digital products and design systems" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/66524909-6d76-4505-bade-0729509d3cdd" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/66524909-6d76-4505-bade-0729509d3cdd" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
