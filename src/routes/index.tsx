@@ -37,6 +37,26 @@ const testimonials = [
     name: "Client",
     role: "Freelance Project",
   },
+  {
+    quote: "His designs are thoughtful, well-researched, and always user-centered. Highly recommend!",
+    name: "Anika Sharma",
+    role: "Product Lead, TechStart",
+  },
+  {
+    quote: "Saurabh brought clarity to our chaotic product. The UX overhaul increased engagement by 40%.",
+    name: "Rohan Mehta",
+    role: "CEO, FinEdge",
+  },
+  {
+    quote: "Working with Saurabh was seamless. He truly understands what users need before they do.",
+    name: "Priya Nair",
+    role: "Head of Product, Buildly",
+  },
+  {
+    quote: "A rare designer who balances aesthetics with usability perfectly. Would work with again!",
+    name: "James O'Connor",
+    role: "Founder, Pixelworks",
+  },
 ];
 
 const brands = ["Cadbury", "Vistaprint", "BannerBuzz", "LIVSPACE", "Disney"];
@@ -120,33 +140,33 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="text-3xl md:text-4xl">What others say!</h2>
-        <p className="mt-2 text-muted-foreground">I didn't come up with these, I swear</p>
+      {/* Testimonials Marquee */}
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-3xl md:text-4xl">What others say!</h2>
+          <p className="mt-2 text-muted-foreground">I didn't come up with these, I swear</p>
+        </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testimonials.slice(0, 3).map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-xl bg-card p-6"
-            >
-              <p className="text-sm leading-relaxed text-foreground">"{t.quote}"</p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                  <span className="text-xs font-medium text-primary">{t.name[0]}</span>
-                </div>
-                <div>
-                  <p className="text-sm font-medium">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+        <div className="mt-10 overflow-hidden">
+          <div className="flex animate-scroll-testimonials gap-6 whitespace-nowrap hover:[animation-play-state:paused]">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div
+                key={i}
+                className="inline-block w-[340px] flex-shrink-0 whitespace-normal rounded-xl bg-card p-6"
+              >
+                <p className="text-sm leading-relaxed text-foreground">"{t.quote}"</p>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
+                    <span className="text-xs font-medium text-primary">{t.name[0]}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>

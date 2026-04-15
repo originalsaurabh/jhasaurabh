@@ -1,7 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
 
 export function Navbar() {
   const location = useLocation();
@@ -15,12 +14,13 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        {/* Left: Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logo} alt="SJ Logo" width={40} height={40} className="h-10 w-10" />
+          <img src="/images/sj-logo.svg" alt="SJ Logo" width={40} height={40} className="h-10 w-10" />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden items-center gap-8 md:flex">
+        {/* Center: Nav Links (desktop) */}
+        <div className="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <Link
               key={link.to}
@@ -34,12 +34,21 @@ export function Navbar() {
           ))}
         </div>
 
+        {/* Right: Resume + Connect */}
         <div className="hidden items-center gap-3 md:flex">
           <Link to="/resume">
-            <Button variant="outline" size="sm" className="gap-2">
-              <span className="h-6 w-6 rounded-full bg-gradient-to-br from-pink-400 via-purple-500 to-orange-400" />
-              Resume
-            </Button>
+            <button className="resume-btn group relative" aria-label="Resume">
+              <img
+                src="/images/resume-button-closed.svg"
+                alt="Resume"
+                className="h-[46px] block group-hover:hidden"
+              />
+              <img
+                src="/images/resume-button-hover.svg"
+                alt="Resume hover"
+                className="h-[56px] hidden group-hover:block"
+              />
+            </button>
           </Link>
           <Link to="/contact">
             <Button variant="nav" size="sm">Let's Connect</Button>
