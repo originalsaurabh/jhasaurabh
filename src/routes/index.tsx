@@ -37,6 +37,26 @@ const testimonials = [
     name: "Client",
     role: "Freelance Project",
   },
+  {
+    quote: "His designs are thoughtful, well-researched, and always user-centered. Highly recommend!",
+    name: "Anika Sharma",
+    role: "Product Lead, TechStart",
+  },
+  {
+    quote: "Saurabh brought clarity to our chaotic product. The UX overhaul increased engagement by 40%.",
+    name: "Rohan Mehta",
+    role: "CEO, FinEdge",
+  },
+  {
+    quote: "Working with Saurabh was seamless. He truly understands what users need before they do.",
+    name: "Priya Nair",
+    role: "Head of Product, Buildly",
+  },
+  {
+    quote: "A rare designer who balances aesthetics with usability perfectly. Would work with again!",
+    name: "James O'Connor",
+    role: "Founder, Pixelworks",
+  },
 ];
 
 const brands = ["Cadbury", "Vistaprint", "BannerBuzz", "LIVSPACE", "Disney"];
