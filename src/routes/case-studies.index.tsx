@@ -7,7 +7,7 @@ import projectAmazon from "@/assets/project-amazon.jpg";
 import projectSaathi from "@/assets/project-saathi.jpg";
 import projectSportz from "@/assets/project-sportz.jpg";
 
-export const Route = createFileRoute("/case-studies")({
+export const Route = createFileRoute("/case-studies/")({
   component: CaseStudiesPage,
   head: () => ({
     meta: [
