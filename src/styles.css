@@ -130,3 +130,35 @@
 .animate-scroll-testimonials {
   animation: scroll-testimonials 30s linear infinite;
 }
+
+/* Navbar logo tilt animation */
+.navbar-logo-tilt {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo-tilt:hover {
+  transform: rotate(-3deg);
+}
+
+/* Resume button smooth transition */
+.resume-button-container {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Available Now — blink halo (matches Figma blink-on / blink-off frames) */
+@keyframes blink-halo {
+  0%, 9% { opacity: 0; transform: scale(0.1); }
+  10%, 19% { opacity: 0.2; transform: scale(0.2); }
+  20%, 29% { opacity: 0.3; transform: scale(0.3); }
+  30%, 39% { opacity: 0.4; transform: scale(0.4); }
+  40%, 49% { opacity: 0.5; transform: scale(0.5); }
+  50%, 59% { opacity: 0.6; transform: scale(0.6); }
+  60%, 69% { opacity: 0.7; transform: scale(0.7); }
+  70%, 79% { opacity: 0.8; transform: scale(0.8); }
+  80%, 89% { opacity: 0.9; transform: scale(0.9); }
+  90%, 100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-blink-halo {
+  animation: blink-halo 1.0s steps(1, end) infinite;
+}

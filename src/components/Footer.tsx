@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <p className="font-display text-sm">
-          Handcrafted with <span className="text-primary">❤️</span> by Saurabh.
+          Designed & VibeCoded with <span className="text-primary">❤️</span> by Saurabh.
         </p>
         <div className="flex items-center gap-4">
           <a

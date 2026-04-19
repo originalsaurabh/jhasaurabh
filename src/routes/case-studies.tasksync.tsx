@@ -6,105 +6,559 @@ export const Route = createFileRoute("/case-studies/tasksync")({
   component: TaskSyncPage,
   head: () => ({
     meta: [
-      { title: "TaskSync Case Study — Saurabh Jha" },
-      { name: "description", content: "TaskSync: LMS & Productivity App for university students." },
+      { title: "TaskSync — Redesigning the University LMS Experience" },
+      {
+        name: "description",
+        content:
+          "TaskSync: a unified central application replacing fragmented learning management systems for students, professors, and administration.",
+      },
     ],
   }),
 });
 
+/* ---------- Reusable section blocks ---------- */
+
+function H2({ children }: { children: React.ReactNode }) {
+  return (
+    <h2
+      style={{
+        color: "#000",
+        fontSize: 24,
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 600,
+        lineHeight: "26.4px",
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function Body({ children }: { children: React.ReactNode }) {
+  return (
+    <p
+      style={{
+        color: "#000",
+        fontSize: 16,
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 400,
+        lineHeight: "22px",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
+function BodyBold({ children }: { children: React.ReactNode }) {
+  return (
+    <p
+      style={{
+        color: "#000",
+        fontSize: 16,
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 700,
+        lineHeight: "22px",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul
+      style={{
+        color: "#000",
+        fontSize: 16,
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 400,
+        lineHeight: "22px",
+        paddingLeft: 20,
+        margin: 0,
+      }}
+      className="list-disc space-y-1"
+    >
+      {items.map((it, i) => (
+        <li key={i}>{it}</li>
+      ))}
+    </ul>
+  );
+}
+
+function Section({ children }: { children: React.ReactNode }) {
+  return <div className="w-full max-w-[900px] space-y-3">{children}</div>;
+}
+
+function Placeholder({
+  label,
+  height = 337,
+}: {
+  label: string;
+  height?: number;
+}) {
+  return (
+    <div
+      className="w-full max-w-[900px] rounded-md flex items-center justify-center"
+      style={{
+        height,
+        background: "#E9EBE6",
+        color: "#6b6b6b",
+        fontSize: 14,
+        fontFamily: "Inter, sans-serif",
+      }}
+    >
+      {label}
+    </div>
+  );
+}
+
+/* ---------- Inline icons ---------- */
+
+const TimelineIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
+    <rect x="2.5" y="3.75" width="15" height="13.75" rx="2" stroke="#000" strokeWidth="1.5" />
+    <path d="M2.5 7.5h15M6.25 2.5v2.5M13.75 2.5v2.5" stroke="#000" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+const RoleIcon = () => (
+  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden>
+    <circle cx="9" cy="6" r="3.25" stroke="#100F0D" strokeWidth="1.5" />
+    <path d="M2.5 18c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5" stroke="#100F0D" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+const SkillsIcon = () => (
+  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden>
+    <circle cx="2.4" cy="2.3" r="1.7" fill="#100F0D" />
+    <circle cx="2.4" cy="9" r="1.7" fill="#100F0D" />
+    <circle cx="2.4" cy="15.7" r="1.7" fill="#100F0D" />
+    <rect x="7.1" y="1.3" width="12.9" height="2" rx="1" fill="#100F0D" />
+    <rect x="7.1" y="8" width="12.9" height="2" rx="1" fill="#100F0D" />
+    <rect x="7.1" y="14.7" width="12.9" height="2" rx="1" fill="#100F0D" />
+  </svg>
+);
+
+/* ---------- Page ---------- */
+
 function TaskSyncPage() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-20">
-      {/* Hero */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <div className="overflow-hidden rounded-2xl bg-[#A8D96C]/20">
-          <img src={projectTasksync} alt="TaskSync" className="w-full object-cover" />
-        </div>
-
-        <div className="mt-10">
-          <h1 className="text-4xl md:text-5xl">TaskSync</h1>
-          <p className="mt-2 font-display text-xl text-muted-foreground">LMS & Productivity App</p>
-        </div>
+    <article className="w-full">
+      {/* COVER IMAGE */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="w-full flex items-center justify-center"
+        style={{ background: "#E2F397" }}
+      >
+        <img
+          src={projectTasksync}
+          alt="TaskSync — LMS & Productivity App cover"
+          className="w-full max-w-[1280px] object-cover"
+          style={{ height: "auto", aspectRatio: "1280 / 690" }}
+        />
       </motion.div>
 
-      {/* Meta */}
-      <div className="mt-10 grid grid-cols-2 gap-6 rounded-xl bg-card p-6 md:grid-cols-4">
-        <div>
-          <p className="text-xs text-muted-foreground">Role</p>
-          <p className="text-sm font-medium">UX / Product Designer</p>
-        </div>
-        <div>
-          <p className="text-xs text-muted-foreground">Duration</p>
-          <p className="text-sm font-medium">Apr – Jul 2024</p>
-        </div>
-        <div>
-          <p className="text-xs text-muted-foreground">Status</p>
-          <p className="text-sm font-medium">Completed</p>
-        </div>
-        <div>
-          <p className="text-xs text-muted-foreground">Location</p>
-          <p className="text-sm font-medium">Göttingen, Germany</p>
-        </div>
-      </div>
+      {/* HEADER */}
+      <header className="w-full flex flex-col items-center px-6 md:px-[240px] py-10 gap-4">
+        <h1
+          className="w-full max-w-[900px]"
+          style={{
+            color: "#000",
+            fontSize: 24,
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 600,
+            lineHeight: "26.4px",
+          }}
+        >
+          TaskSync - Redesigning the University LMS Experience
+        </h1>
+        <p
+          className="w-full max-w-[900px]"
+          style={{
+            color: "#000",
+            fontSize: 16,
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 400,
+            lineHeight: "17.6px",
+          }}
+        >
+          Unified central application replacing fragmented learning management systems
+        </p>
 
-      {/* Content Sections */}
-      <div className="mt-16 space-y-14">
-        <div>
-          <h2 className="text-2xl">Project Overview</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            TaskSync is a Learning Management System (LMS) and Productivity app designed specifically for university students. The goal was to create a unified platform that consolidates academic tasks, deadlines, communication, and resources into a single intuitive mobile experience.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl">Problem Statement</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            University students juggle multiple tools for managing their academic life — separate apps for calendars, to-do lists, grade tracking, and communication. This fragmentation leads to missed deadlines, duplicated effort, and cognitive overload. TaskSync aimed to solve this by providing a centralized, student-focused productivity platform.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl">Design Process</h2>
-          <div className="mt-6 grid grid-cols-5 gap-4">
-            {["Discover", "Define", "Ideate", "Design", "Test"].map((phase, i) => (
-              <div key={i} className="rounded-lg bg-card p-4 text-center">
-                <p className="text-xs text-muted-foreground">Phase {i + 1}</p>
-                <p className="mt-1 text-sm font-medium">{phase}</p>
+        <div className="w-full max-w-[900px] flex flex-col sm:flex-row items-start gap-6 sm:gap-4">
+          {[
+            { icon: <TimelineIcon />, label: "Timeline", value: "April - July 2024" },
+            { icon: <RoleIcon />, label: "Role", value: "UX Designer" },
+            {
+              icon: <SkillsIcon />,
+              label: "Leveraged Skills",
+              value: "Research · Ideation · IA · UI · Concept Design",
+            },
+          ].map((m) => (
+            <div key={m.label} className="flex-1 flex flex-col items-start gap-1">
+              <div className="flex items-center gap-1">
+                {m.icon}
+                <span
+                  style={{
+                    color: "#000",
+                    fontSize: 16,
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 600,
+                    lineHeight: "17.6px",
+                  }}
+                >
+                  {m.label}
+                </span>
               </div>
-            ))}
-          </div>
+              <span
+                style={{
+                  color: "#000",
+                  fontSize: 14,
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 400,
+                  lineHeight: "15.4px",
+                }}
+              >
+                {m.value}
+              </span>
+            </div>
+          ))}
         </div>
+      </header>
 
-        <div>
-          <h2 className="text-2xl">Key Features</h2>
-          <div className="mt-6 space-y-4">
-            {[
-              { title: "Unified Calendar", desc: "All academic deadlines, exams, and events in one view." },
-              { title: "Centralized Communication Hub", desc: "Direct messaging with peers and professors." },
-              { title: "Academic Content Library", desc: "Course materials organized by semester and subject." },
-              { title: "AI-Powered Academic Assistant", desc: "Smart suggestions for study planning and task prioritization." },
-            ].map((f, i) => (
-              <div key={i} className="rounded-xl bg-card p-5">
-                <h4 className="text-sm font-bold font-body">{f.title}</h4>
-                <p className="mt-1 text-xs text-muted-foreground">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* BODY */}
+      <div className="w-full flex flex-col items-center px-6 md:px-[240px] pb-20 gap-6">
+        <Section>
+          <H2>Project Overview</H2>
+          <Body>
+            Universities today rely heavily on Learning Management Systems to manage teaching, learning, and
+            administration. However, most existing LMS platforms are outdated, visually cluttered, and fragmented
+            across multiple systems. Students often struggle to understand academic processes, professors find
+            the systems complex and unintuitive, and administrative staff rely on entirely separate platforms
+            that are not transparent to users.
+          </Body>
+          <Body>
+            TaskSync was designed as an attempt to rethink the LMS from a user-centered perspective by unifying
+            all university-related workflows into one central application. Instead of adding more features to an
+            already complex system, the focus was placed on clarity, structure, and meaningful integration.
+          </Body>
+        </Section>
 
-        <div>
-          <h2 className="text-2xl">Outcome & Impact</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            The final prototype was validated through usability testing with 8 university students. Key outcomes included a 40% reduction in task management time and a 92% satisfaction rate for the unified calendar feature. The project demonstrated how thoughtful UX design can significantly reduce cognitive load in academic environments.
-          </p>
+        <Section>
+          <H2>Problem Statement</H2>
+          <Body>
+            The existing LMS ecosystem presents several usability and structural problems that negatively impact
+            all user groups.
+          </Body>
+          <BulletList
+            items={[
+              "Academic workflows are unclear, and users often do not know what the next step or final outcome will be",
+              "Multiple platforms are required to complete a single task (LMS, email, calendar, portals, admin systems)",
+              "Visual design is outdated, reducing engagement and adoption",
+              "Professors often avoid advanced or AI-based features due to poor usability",
+              "Administrative systems operate separately and are difficult to understand for students and faculty",
+            ]}
+          />
+          <Body>
+            As a result, users spend more time navigating systems than focusing on learning, teaching, or
+            decision-making.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Design Goals</H2>
+          <Body>
+            The primary goal of TaskSync was to design a single, unified academic platform that replaces
+            fragmented LMS systems and improves the overall university experience.
+          </Body>
+          <Body>The project focused on:</Body>
+          <BulletList
+            items={[
+              "Centralizing academic workflows into one system",
+              "Reducing cognitive load and confusion",
+              "Improving clarity of academic processes and outcomes",
+              "Supporting different user groups without creating separate tools",
+              "Introducing AI as a supportive, assistive feature rather than a replacement",
+            ]}
+          />
+        </Section>
+
+        <Section>
+          <H2>Design Process</H2>
+          <Body>
+            The project followed a structured UX design process to ensure that design decisions were grounded in
+            research and user needs.
+          </Body>
+        </Section>
+
+        <Placeholder label="Design Process Diagram (899 × 337)" />
+
+        <Section>
+          <Body>
+            Each phase informed the next, allowing the solution to evolve from research insights to a refined
+            interface and interaction model.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Discover Phase – User Research</H2>
+          <Body>
+            Research Objectives: The research phase focused on understanding how students, professors, and
+            administrative staff interact with existing LMS systems and where the main points of friction occur.
+          </Body>
+          <BodyBold>Key objectives included:</BodyBold>
+          <BulletList
+            items={[
+              "Identifying pain points in current academic workflows",
+              "Understanding expectations from an ideal LMS",
+              "Analyzing how users currently manage academic tasks across platforms",
+            ]}
+          />
+          <BodyBold>Research Methods:</BodyBold>
+          <BulletList
+            items={[
+              "Secondary research on existing LMS platforms",
+              "Informal interviews and discussions with students and peers",
+              "Analysis of personal academic experiences using LMS systems",
+            ]}
+          />
+          <Body>These methods provided qualitative insights into recurring usability and structural issues.</Body>
+        </Section>
+
+        <Section>
+          <H2>Competitive Analysis</H2>
+        </Section>
+
+        <Placeholder label="Competitive Analysis Table (899 × 337)" />
+
+        <Section>
+          <Body>A competitive analysis was conducted to evaluate commonly used LMS platforms and academic tools.</Body>
+          <BodyBold>The analysis revealed that while most systems offer similar features, they suffer from:</BodyBold>
+          <BulletList
+            items={[
+              "Poor information hierarchy",
+              "Weak cross-platform integration",
+              "Overloaded interfaces",
+              "Low adoption of AI features",
+            ]}
+          />
+          <Body>Rather than focusing on feature quantity, TaskSync focuses on integration, clarity, and consistency.</Body>
+        </Section>
+
+        <Section>
+          <H2>Define Phase – User Persona</H2>
+          <Body>To represent the primary user group, a student persona was created based on research findings.</Body>
+          <Body>Persona: Sarah Jane Age: 21 Occupation: University Student</Body>
+          <BodyBold>Needs:</BodyBold>
+          <BulletList
+            items={[
+              "Clear overview of deadlines and academic responsibilities",
+              "Easy access to learning materials",
+              "Centralized communication with professors and peers",
+            ]}
+          />
+          <BodyBold>Pain Points:</BodyBold>
+          <BulletList
+            items={[
+              "Too many platforms for academic tasks",
+              "Confusion around submissions, schedules, and outcomes",
+              "Difficulty finding past materials and information",
+            ]}
+          />
+        </Section>
+
+        <Placeholder label="Sarah Jane Persona Card (900 × 562)" height={562} />
+
+        <Section>
+          <H2>Empathy Map</H2>
+          <Body>
+            An empathy map was created to better understand the thoughts, feelings, and frustrations of students
+            when interacting with existing LMS platforms. This helped ensure that design decisions addressed
+            emotional as well as functional pain points.
+          </Body>
+        </Section>
+
+        <Placeholder label="Empathy Map (900 × 388)" height={388} />
+
+        <Section>
+          <H2>Ideate Phase – User Flow</H2>
+          <Body>
+            Based on research and defined requirements, user flows were created to map out key academic tasks
+            such as accessing materials, communicating with professors, and managing schedules.
+          </Body>
+          <Body>The goal was to reduce unnecessary steps and make each workflow intuitive and predictable.</Body>
+        </Section>
+
+        <Placeholder label="User Flow Diagram (900 × 450)" height={450} />
+
+        <Section>
+          <H2>Solution Overview</H2>
+          <Body>
+            TaskSync is designed as a centralized academic ecosystem that brings together all university-related
+            activities into one application.
+          </Body>
+          <Body>
+            It integrates scheduling, communication, academic content, and AI-powered assistance into a single
+            interface that adapts to different user roles without fragmenting the experience.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Key Features - Unified Calendar</H2>
+          <Body>
+            TaskSync provides a single calendar that supports academic, personal, and professional events. Events
+            are organized using tags and color coding, allowing users to differentiate between categories while
+            maintaining a unified overview.
+          </Body>
+          <Body>
+            The calendar can sync with external services, ensuring that users do not need to manage multiple
+            calendars across platforms.
+          </Body>
+        </Section>
+
+        <Placeholder label="Unified Calendar Screens (899 × 337)" />
+
+        <Section>
+          <H2>Key Features - Centralized Communication Hub</H2>
+          <Body>
+            All study-related communication takes place within one centralized message system. This includes
+            student-professor communication, course-based discussions, and administrative announcements.
+          </Body>
+          <Body>
+            By consolidating communication, TaskSync eliminates scattered emails and reduces missed or
+            misunderstood messages.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Key Features - Academic Content Library</H2>
+          <Body>
+            All academic materials such as lecture slides, notes, assignments, and presentations are stored in a
+            single searchable repository. Content is organized by course, semester, and topic, making it easy to
+            locate information even after a course has ended.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Key Features - AI-Powered Academic Assistant</H2>
+          <Body>TaskSync integrates AI as a supportive academic assistant.</Body>
+          <BodyBold>For students, AI helps with:</BodyBold>
+          <BulletList
+            items={[
+              "Lecture note assistance",
+              "Topic explanations",
+              "Generating possible exam questions",
+              "Searching across the entire platform",
+            ]}
+          />
+          <BodyBold>For professors, AI supports:</BodyBold>
+          <BulletList
+            items={[
+              "Lecture planning",
+              "Exam preparation",
+              "Scheduling evaluations and grading",
+            ]}
+          />
+          <Body>For administration, AI assists with managing student data and reducing repetitive queries.</Body>
+        </Section>
+
+        <Section>
+          <H2>Design Phase – Wireframes</H2>
+          <Body>
+            Initial ideas were explored using hand-drawn wireframes. These low-fidelity sketches allowed rapid
+            iteration and experimentation with layout, navigation, and hierarchy before moving into high-fidelity
+            design.
+          </Body>
+        </Section>
+
+        <Placeholder label="Wireframes (899 × 337)" />
+
+        <Section>
+          <H2>Visual Design &amp; User Interface</H2>
+          <Body>
+            The final UI design focuses on clarity, visual hierarchy, and accessibility. Colors and typography
+            were chosen to support readability while maintaining a modern and friendly academic aesthetic.
+          </Body>
+          <Body>The interface aims to reduce visual noise and guide users naturally through their tasks.</Body>
+        </Section>
+
+        <Placeholder label="Visual UI Screens (900 × 562)" height={562} />
+
+        <Section>
+          <H2>Prototype</H2>
+          <Body>
+            A high-fidelity interactive prototype was created to demonstrate core workflows and interactions. The
+            prototype showcases how users navigate between features and complete academic tasks within TaskSync.
+          </Body>
+        </Section>
+
+        <a
+          href="#"
+          className="inline-flex items-center justify-center rounded-md transition-opacity hover:opacity-90"
+          style={{
+            padding: 10,
+            background: "#3B2313",
+            outline: "1px solid #3B2313",
+            outlineOffset: "-1px",
+            color: "#FFFBEE",
+            fontSize: 16,
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 600,
+          }}
+        >
+          Experience the Interactive Prototype
+        </a>
+
+        <Section>
+          <H2>Usability Testing</H2>
+          <Body>
+            After the Visual design was complete I tested the prototype with 5 representative users to see how
+            user friendly the application is. The test was conducted over Skype calls where the participants
+            were given the following tasks while I observed how they navigated through application:
+          </Body>
+          <BulletList
+            items={[
+              "Create a New Task",
+              "Navigate the Calendar",
+              "Send a Message to a Group Member",
+              "Sync your calendars",
+            ]}
+          />
+        </Section>
+
+        <Section>
+          <H2>Outcome &amp; Impact</H2>
+          <Body>
+            TaskSync received a final grade of 1.00, the highest possible grade in the German education system.
+            The project was well received by professors and peers, particularly for its clarity, structure, and
+            depth of consideration for different user groups.
+          </Body>
+          <Body>
+            The project demonstrated strong system-level thinking, justified design decisions, and effective
+            information architecture.
+          </Body>
+        </Section>
+
+        <Section>
+          <H2>Reflection &amp; Future Scope</H2>
+          <Body>
+            Future improvements could explore deeper AI integration, real-time lecture transcription for
+            in-person classes, and adaptation for real-world university systems.
+          </Body>
+          <Body>
+            TaskSync serves as a conceptual exploration of how thoughtful UX design can simplify complex academic
+            ecosystems.
+          </Body>
+        </Section>
+
+        <div className="w-full max-w-[900px] pt-6">
+          <Link to="/case-studies" className="text-sm text-primary hover:underline">
+            ← Back to Case Studies
+          </Link>
         </div>
       </div>
-
-      <div className="mt-16">
-        <Link to="/case-studies" className="text-sm text-primary hover:underline">
-          ← Back to Case Studies
-        </Link>
-      </div>
-    </section>
+    </article>
   );
 }

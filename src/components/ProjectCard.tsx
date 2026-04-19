@@ -1,50 +1,168 @@
 import { Link } from "@tanstack/react-router";
 
 interface ProjectCardProps {
-  image: string;
+  cover: string;
+  left: string;
+  mid: string;
+  right: string;
   title: string;
   year: string;
   linkTo?: string;
-  linkLabel?: string;
   type?: string;
+  description: string;
+  role: string;
 }
 
-export function ProjectCard({ image, title, year, linkTo, linkLabel = "View Case Study →", type = "Case Study" }: ProjectCardProps) {
-  const content = (
-    <div className="group overflow-hidden rounded-xl bg-card transition-all hover:shadow-lg">
-      <div className="aspect-[4/3] overflow-hidden">
+export function ProjectCard({
+  cover,
+  left,
+  mid,
+  right,
+  title,
+  year,
+  linkTo,
+  type = "Case Study",
+  description,
+  role,
+}: ProjectCardProps) {
+
+  const card = (
+    <div className="group relative w-[380px] h-[420px]">
+
+      {/* CANVAS */}
+      <div className="relative w-full h-[380px] overflow-visible">
+
+        {/* MID */}
         <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          src={mid}
+          className="
+            absolute left-[143.61px] top-[34px]
+            w-[94px] h-[211.13px]
+            rounded-[10px]
+            object-cover object-top
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:top-[0px]
+          "
         />
-      </div>
-      <div className="flex items-center justify-between px-4 py-3">
-        <div>
-          <p className="text-xs text-muted-foreground">{type}</p>
-          <p className="font-medium text-foreground">{title}</p>
+
+        {/* LEFT */}
+        <img
+          src={left}
+          className="
+            absolute left-[50px] top-[42.27px]
+            w-[93px] h-[93px]
+            rounded-[10px]
+            object-cover object-top
+            -rotate-[6deg]
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:left-[22px]
+            group-hover:top-[49.75px]
+            group-hover:-rotate-[17deg]
+          "
+        />
+
+        {/* RIGHT */}
+        <img
+          src={right}
+          className="
+            absolute left-[237px] top-[34px]
+            w-[93px] h-[190.72px]
+            rounded-[10px]
+            object-cover object-top
+            rotate-[4deg]
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:left-[260.81px]
+            group-hover:top-[6px]
+            group-hover:rotate-[13deg]
+          "
+        />
+
+        {/* COVER */}
+        <img
+          src={cover}
+          className="
+            absolute left-[50px] top-[73px]
+            w-[280px] h-[175px]
+            rounded-[18px]
+            object-cover object-top
+            shadow-md
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+            group-hover:left-[39.32px]
+            group-hover:top-[101.69px]
+            group-hover:-rotate-[5deg]
+          "
+        />
+
+        {/* WHITE CARD */}
+        <div
+          className="
+            absolute left-[50px] top-[120px]
+            w-[280px] h-[180px]
+            bg-white
+            rounded-[20px]
+            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+            overflow-hidden
+
+            transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+            group-hover:rotate-[-5deg]
+            group-hover:h-[140px]
+            group-hover:top-[160px]
+          "
+        >
+          <div className="relative w-full h-full px-4">
+
+            {/* TOP TEXT (MOVES WITH CARD) */}
+            <div className="absolute top-4 left-4 right-4">
+              <p className="text-[10px] leading-[14.5px] font-medium text-black">
+                {type}
+              </p>
+
+              <p className="text-[10px] leading-[14.5px] font-medium text-black">
+                {year}
+              </p>
+            </div>
+
+            {/* TITLE (BOTTOM LOCKED) */}
+            <h3
+              className="
+                absolute left-4 right-4 bottom-4
+                text-[24px] leading-[28px] font-semibold text-black
+              "
+            >
+              {title}
+            </h3>
+
+          </div>
         </div>
-        <span className="text-xs text-muted-foreground">{year}</span>
+
       </div>
+
+      {/* DESCRIPTION */}
+      <div
+        className="
+          absolute left-[50px] top-[360px]
+          w-[280px]
+          text-[16px] leading-[23px] text-black/60
+          opacity-0
+          transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+          group-hover:opacity-100
+          group-hover:translate-y-[10px]
+        "
+      >
+        {description}
+        <br />
+        <span className="text-black font-semibold">Role: {role}</span>
+      </div>
+
     </div>
   );
 
-  if (linkTo) {
-    return (
-      <div>
-        {content}
-        <Link to={linkTo} className="mt-2 block text-center text-sm text-foreground hover:text-primary transition-colors">
-          {linkLabel}
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      {content}
-      <p className="mt-2 text-center text-sm text-muted-foreground">{linkLabel}</p>
-    </div>
+  return linkTo ? (
+    <Link to={linkTo} className="block">
+      {card}
+    </Link>
+  ) : (
+    card
   );
 }

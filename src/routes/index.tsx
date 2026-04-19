@@ -2,9 +2,30 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ProjectCard";
-import projectComdaily from "@/assets/project-comdaily.jpg";
-import projectTasksync from "@/assets/project-tasksync.jpg";
-import projectIba from "@/assets/project-iba.jpg";
+import comdailyCover from "@/assets/Card images/comdaily cover.png";
+import comdailyCoverHover from "@/assets/Card images/comdaily cover hover.png";
+import comdailyLeft from "@/assets/Card images/comdaily left.png";
+import comdailyLeftHover from "@/assets/Card images/comdaily left hover.png";
+import comdailyMid from "@/assets/Card images/comdaily mid.png";
+import comdailyMidHover from "@/assets/Card images/comdaily mid hover.png";
+import comdailyRight from "@/assets/Card images/comdaily right.png";
+import comdailyRightHover from "@/assets/Card images/comdaily right hover.png";
+import tsCover from "@/assets/Card images/TS cover.png";
+import tsCoverHover from "@/assets/Card images/TS cover hover.png";
+import tsLeft from "@/assets/Card images/TS left.png";
+import tsLeftHover from "@/assets/Card images/TS left hover.png";
+import tsMid from "@/assets/Card images/TS mid.png";
+import tsMidHover from "@/assets/Card images/TS mid hover.png";
+import tsRight from "@/assets/Card images/TS right.png";
+import tsRightHover from "@/assets/Card images/TS right hover.png";
+import ibaCover from "@/assets/Card images/iba cover.png";
+import ibaCoverHover from "@/assets/Card images/iba cover hover.png";
+import ibaLeft from "@/assets/Card images/iba left.png";
+import ibaLeftHover from "@/assets/Card images/iba left hover.png";
+import ibaMid from "@/assets/Card images/iba mid.png";
+import ibaMidHover from "@/assets/Card images/iba mid hover.png";
+import ibaRight from "@/assets/Card images/iba right.png";
+import ibaRightHover from "@/assets/Card images/iba right hover.png";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -18,12 +39,7 @@ export const Route = createFileRoute("/")({
 
 const testimonials = [
   {
-    quote: "Using this felt like it transformed me completely.",
-    name: "David",
-    role: "Co-Founder at comdaily",
-  },
-  {
-    quote: "In the garden of life, some things are just very sweet. This is one of them.",
+    quote: "Saurabh brought much-needed structure to our design process early on. He built a design system that improved consistency and reduced developer back-and-forth. What stood out was his ability to challenge ideas constructively and think beyond execution.",
     name: "Ellen Martin",
     role: "Co-Founder at comdaily",
   },
@@ -33,33 +49,44 @@ const testimonials = [
     role: "MICARAA GmbH",
   },
   {
-    quote: "Saurabh is a pleasure to work with. Always forward-thinking.",
-    name: "Client",
-    role: "Freelance Project",
+    quote: "Our conversion rate went from ~1.8% to 3.4%, and checkout drop-offs dropped by ~22%. Sessions were also up ~35%. Saurabh has been quite instrumental with his UI/UX work on my website. He focused on real user behavior, not just visuals, and delivered fast, clean iterations. Reliable and actually moves numbers.",
+    name: "Shreyans Jain",
+    role: "Head of Sales, Saathi Pads",
   },
   {
-    quote: "His designs are thoughtful, well-researched, and always user-centered. Highly recommend!",
-    name: "Anika Sharma",
-    role: "Product Lead, TechStart",
+    quote: "Saurabh quickly identified issues in our purchase flow and improved them without being explicitly asked. His work was practical, user-focused, and contributed to stronger engagement and overall performance.",
+    name: "Mehleka Bhaisaheb",
+    role: "Digital Marketing Manager,IBA Cosmetics",
   },
   {
-    quote: "Saurabh brought clarity to our chaotic product. The UX overhaul increased engagement by 40%.",
-    name: "Rohan Mehta",
-    role: "CEO, FinEdge",
+    quote: "Saurabh handled multiple campaigns under pressure while keeping focus on what actually worked for users. His work on the website directly improved conversions and reduced drop-offs.",
+    name: "Khushali Samriya",
+    role: "Communication Manager, Saathi Pads",
   },
   {
-    quote: "Working with Saurabh was seamless. He truly understands what users need before they do.",
-    name: "Priya Nair",
-    role: "Head of Product, Buildly",
-  },
-  {
-    quote: "A rare designer who balances aesthetics with usability perfectly. Would work with again!",
-    name: "James O'Connor",
-    role: "Founder, Pixelworks",
+    quote: "Saurabh is very responsive and is a pleasure to work with. I look forward to continue working with you guys going forward!",
+    name: "Ricardo",
+    role: "Founder, Bannerfi",
   },
 ];
 
-const brands = ["Cadbury", "Vistaprint", "BannerBuzz", "LIVSPACE", "Disney"];
+// To add new logos in the future:
+// 1. Add the logo file to public/brand/ folder
+// 2. Add a new object to this array with name and logo properties
+const brands = [
+  { name: "Cadbury", logo: "/brand/Cadbury.svg" },
+  { name: "Vistaprint", logo: "/brand/VistaPrint_idVhzhABHb_0.svg" },
+  { name: "BannerBuzz", logo: "/brand/BannerBuzzWorld_id_V73LBRU_1.svg" },
+  { name: "LIVSPACE", logo: "/brand/Livspace_idvWCv3LDF_1.svg" },
+  { name: "Amazon", logo: "/brand/Amazon_Logo_0.svg" },
+  { name: "Mondelēz", logo: "/brand/Mondelēz International_id5rKWAECb_0.svg" },
+  { name: "Logo", logo: "/brand/Logo.svg" },
+  { name: "Transparent", logo: "/brand/Transparent_logo_white_720x.webp" },
+  { name: "MICARAA", logo: "/brand/micaraa-Logo-RGB_mit-Slogan-1000px_8726c8df-96b6-4a93-8d6a-aab01b201b39_400x.avif" },
+  { name: "SI", logo: "/brand/si-logo.svg" },
+  { name: "Logos 1", logo: "/brand/idBb09CBkC_logos.png" },
+  { name: "Logos 2", logo: "/brand/idLbJxDHSd_1771767311359.png" },
+];
 
 function HomePage() {
   return (
@@ -72,18 +99,35 @@ function HomePage() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center gap-6"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-1.5 text-sm font-medium">
-            <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+          <span
+            className="inline-flex items-center gap-2 rounded-[22px] px-4 py-2 text-sm font-medium text-white"
+            style={{ background: "rgba(59, 35, 19, 0.50)" }}
+          >
+            <span className="relative flex h-5 w-5 items-center justify-center">
+              {/* Outer halo — fades in/out */}
+              <span
+                className="absolute h-5 w-5 rounded-full animate-blink-halo"
+                style={{ background: "rgba(30, 255, 0, 0.50)" }}
+              />
+              {/* Inner solid dot */}
+              <span
+                className="relative h-2.5 w-2.5 rounded-full"
+                style={{ background: "#1EFF00" }}
+              />
+            </span>
             Available Now
           </span>
 
-          <p className="text-base text-muted-foreground">Hello, I'm Saurabh Jha</p>
+          <p className="text-[24px] font-semibold leading-[34.8px] text-black">
+            Hello, I'm Saurabh Jha
+          </p>
 
-          <h1 className="max-w-xl text-4xl leading-tight md:text-5xl">
-            Making products your users don't need instructions for.
+          <h1 className="max-w-2xl text-4xl leading-tight md:text-5xl">
+            Making products your users <br />
+            don't need instructions for.
           </h1>
 
-          <p className="max-w-lg text-muted-foreground">
+          <p className="max-w-2xl text-[24px] font-medium leading-[34.8px] text-black/55">
             I design interfaces, systems, and experiences that make products easier to use and easier to scale.
           </p>
 
@@ -101,10 +145,13 @@ function HomePage() {
       {/* Brand Strip */}
       <section className="overflow-hidden border-y border-border bg-card py-5">
         <div className="flex animate-scroll items-center gap-12 whitespace-nowrap px-6">
-          {[...brands, ...brands].map((brand, i) => (
-            <span key={i} className="font-display text-xl text-muted-foreground md:text-2xl">
-              {brand}
-            </span>
+          {Array.from({ length: 3 }).flatMap(() => brands).map((brand, i) => (
+            <img
+              key={i}
+              src={brand.logo}
+              alt={brand.name}
+              className="h-8 md:h-10 w-auto flex-shrink-0 object-contain"
+            />
           ))}
         </div>
       </section>
@@ -120,21 +167,51 @@ function HomePage() {
 
         <div className="grid gap-8 md:grid-cols-3">
           <ProjectCard
-            image={projectComdaily}
+            cover={comdailyCover}
+            hoverCover={comdailyCoverHover}
+            left={comdailyLeft}
+            hoverLeft={comdailyLeftHover}
+            mid={comdailyMid}
+            hoverMid={comdailyMidHover}
+            right={comdailyRight}
+            hoverRight={comdailyRightHover}
             title="comdaily"
             year="October 2025"
+            type="Case Study"
+            description="Created a scalable design system used across product and marketing."
+            role="UX Designer"
             linkTo="/case-studies"
           />
           <ProjectCard
-            image={projectTasksync}
+            cover={tsCover}
+            hoverCover={tsCoverHover}
+            left={tsLeft}
+            hoverLeft={tsLeftHover}
+            mid={tsMid}
+            hoverMid={tsMidHover}
+            right={tsRight}
+            hoverRight={tsRightHover}
             title="TaskSync"
             year="July 2025"
+            type="Case Study"
+            description="Redesigned UX to improve usability in education platforms."
+            role="UX Designer"
             linkTo="/case-studies/tasksync"
           />
           <ProjectCard
-            image={projectIba}
+            cover={ibaCover}
+            hoverCover={ibaCoverHover}
+            left={ibaLeft}
+            hoverLeft={ibaLeftHover}
+            mid={ibaMid}
+            hoverMid={ibaMidHover}
+            right={ibaRight}
+            hoverRight={ibaRightHover}
             title="iba cosmetics"
             year="April 2025"
+            type="Case Study"
+            description="Improved conversion and built a consistent brand experience."
+            role="Visual Designer"
             linkTo="/case-studies"
           />
         </div>
@@ -152,12 +229,19 @@ function HomePage() {
             {[...testimonials, ...testimonials].map((t, i) => (
               <div
                 key={i}
-                className="inline-block w-[340px] flex-shrink-0 whitespace-normal rounded-xl bg-card p-6"
+                className="inline-flex w-[440px] flex-shrink-0 whitespace-normal rounded-xl bg-card p-6 flex-col"
               >
-                <p className="text-sm leading-relaxed text-foreground">"{t.quote}"</p>
-                <div className="mt-4 flex items-center gap-3">
+                {/* Quote */}
+                <p className="text-sm leading-relaxed text-foreground">
+                  "{t.quote}"
+                </p>
+
+                {/* Footer (bottom aligned) */}
+                <div className="mt-auto pt-6 flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                    <span className="text-xs font-medium text-primary">{t.name[0]}</span>
+                    <span className="text-xs font-medium text-primary">
+                      {t.name[0]}
+                    </span>
                   </div>
                   <div>
                     <p className="text-sm font-medium">{t.name}</p>

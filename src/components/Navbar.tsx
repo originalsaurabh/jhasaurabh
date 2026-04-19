@@ -1,95 +1,80 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { ResumeButton } from "@/components/ResumeButton";
 
 export function Navbar() {
   const location = useLocation();
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const navLinks = [
-    { to: "/about" as const, label: "About Me" },
-    { to: "/case-studies" as const, label: "Case Studies" },
-  ];
 
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* Left: Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src="/images/sj-logo.svg" alt="SJ Logo" width={40} height={40} className="h-10 w-10" />
+      <nav className="relative flex items-center justify-between px-[64px] h-[100px] mx-auto max-w-7xl">
+
+        {/* LOGO */}
+        <Link to="/" className="z-10">
+          <img 
+            src="/images/sj-logo.svg"
+            className="
+              w-[40px] h-[40px]
+              transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
+              hover:rotate-[10deg]
+            "
+            alt="SJ Logo"
+            width={40}
+            height={40}
+          />
         </Link>
 
-        {/* Center: Nav Links (desktop) */}
-        <div className="hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.to ? "text-primary" : "text-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* CENTER NAV */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-[32px] h-full">
+
+          <Link
+            to="/about"
+            className={`text-[16px] leading-none flex items-center transition-all duration-200 ${
+              location.pathname === "/about"
+                ? "text-primary font-medium"
+                : "text-[#3b2313] font-normal"
+            } hover:text-accent hover:font-medium`}
+          >
+            About Me
+          </Link>
+
+          <Link
+            to="/case-studies"
+            className={`text-[16px] leading-none flex items-center transition-all duration-200 ${
+              location.pathname === "/case-studies"
+                ? "text-primary font-medium"
+                : "text-[#3b2313] font-normal"
+            } hover:text-accent hover:font-medium`}
+          >
+            Case Studies
+          </Link>
+
         </div>
 
-        {/* Right: Resume + Connect */}
-        <div className="hidden items-center gap-3 md:flex">
-          <Link to="/resume">
-            <button className="resume-btn group relative" aria-label="Resume">
-              <img
-                src="/images/resume-button-closed.svg"
-                alt="Resume"
-                className="h-[46px] block group-hover:hidden"
-              />
-              <img
-                src="/images/resume-button-hover.svg"
-                alt="Resume hover"
-                className="h-[56px] hidden group-hover:block"
-              />
-            </button>
-          </Link>
+        {/* RIGHT */}
+        <div className="flex items-center gap-[16px]">
+
+            <ResumeButton to="/resume" />
+
+          {/* CONNECT BUTTON */}
           <Link to="/contact">
-            <Button variant="nav" size="sm">Let's Connect</Button>
+            <div className="
+              bg-[#3b2313]
+              px-[16px]
+              h-[47px]
+              flex items-center
+              rounded-[25px]
+              text-[#fffbee]
+              text-[16px]
+              font-medium
+              transition-transform duration-200
+              hover:scale-95
+            ">
+              Let's Connect
+            </div>
           </Link>
-        </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="flex flex-col gap-1.5 md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`h-0.5 w-6 bg-foreground transition-all ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-6 bg-foreground transition-all ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-6 bg-foreground transition-all ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
-        </button>
+        </div>
       </nav>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="text-sm font-medium"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link to="/resume" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="sm" className="w-full">Resume</Button>
-            </Link>
-            <Link to="/contact" onClick={() => setMobileOpen(false)}>
-              <Button variant="nav" size="sm" className="w-full">Let's Connect</Button>
-            </Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

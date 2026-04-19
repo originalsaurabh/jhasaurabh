@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-20">
+    <section className="mx-auto max-w-[1152px] px-6 py-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <h1 className="text-3xl md:text-4xl">
           If it involves design, systems, or making things better. I'm in.
