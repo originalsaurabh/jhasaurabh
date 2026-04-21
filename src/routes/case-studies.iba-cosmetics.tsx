@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectIba from "@/assets/Projects/IBA/Iba-listing-cover.png";
 import {
   Container,
@@ -11,24 +11,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-export const Route = createFileRoute("/case-studies/iba-cosmetics")({
-  component: IbaCosmeticsPage,
-  head: () => ({
-    meta: [
-      { title: "IBA Cosmetics — E-commerce & Brand Experience Design" },
-      {
-        name: "description",
-        content:
-          "End-to-end e-commerce and content design for IBA Cosmetics — strengthening brand consistency, conversion, and storytelling across web, marketplaces, and social.",
-      },
-      { property: "og:title", content: "IBA Cosmetics — E-commerce & Brand Experience" },
-      {
-        property: "og:description",
-        content: "How design helped IBA Cosmetics grow revenue 35% in year one through conversion-focused, on-brand experiences.",
-      },
-    ],
-  }),
-});
 
 function IbaCosmeticsPage() {
   return (
@@ -128,3 +110,5 @@ function IbaCosmeticsPage() {
     </Container>
   );
 }
+
+export default IbaCosmeticsPage;

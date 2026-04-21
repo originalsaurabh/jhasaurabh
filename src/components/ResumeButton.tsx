@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectComdaily from "@/assets/icons/favicon.png";
 import projectIba from "@/assets/icons/iba.png";
 import projectSportz from "@/assets/icons/DC.png";

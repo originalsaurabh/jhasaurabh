@@ -1,16 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/contact")({
-  component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact — Saurabh Jha" },
-      { name: "description", content: "Get in touch for UX/UI, product design, and design systems roles." },
-    ],
-  }),
-});
 
 function ContactPage() {
   return (
@@ -80,3 +71,5 @@ function ContactPage() {
     </section>
   );
 }
+
+export default ContactPage;

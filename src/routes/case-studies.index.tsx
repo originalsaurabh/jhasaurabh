@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import projectComdaily from "@/assets/Projects/comdaily/comdaily-cover.jpg";
 import projectTasksync from "@/assets/project-tasksync.jpg";
@@ -7,19 +7,6 @@ import projectAmazon from "@/assets/Projects/Amazon/Amazon.png";
 import projectSaathi from "@/assets/Projects/Saathi/Saathi Cover.png";
 import projectSportz from "@/assets/Projects/Sportz/SI cover.png";
 
-export const Route = createFileRoute("/case-studies/")({
-  component: CaseStudiesPage,
-  head: () => ({
-    meta: [
-      { title: "Case Studies — Saurabh Jha" },
-      {
-        name: "description",
-        content:
-          "Designing systems and digital products that scale, without losing usability.",
-      },
-    ],
-  }),
-});
 
 const projects = [
   { image: projectComdaily, title: "comdaily", year: "2025", link: "/case-studies/comdaily" },
@@ -110,3 +97,4 @@ function CaseStudiesPage() {
     </section>
   );
 }
+export default CaseStudiesPage;

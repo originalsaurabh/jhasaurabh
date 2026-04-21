@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectSportz from "@/assets/Projects/Sportz/SI cover.png";
 import dcAshwin250 from "@/assets/Projects/Sportz/Delhi Capitals/Ashwin-250_P1.png";
 import dcAshwin from "@/assets/Projects/Sportz/Delhi Capitals/Ashwin.png";
@@ -38,24 +38,6 @@ import {
 } from "@/components/case-study.shared";
 import { SportzGalleryStrip } from "@/components/SportzGalleryStrip";
 
-export const Route = createFileRoute("/case-studies/sportz-interactive")({
-  component: SportzInteractivePage,
-  head: () => ({
-    meta: [
-      { title: "Live from the Field — Sportz Interactive" },
-      {
-        name: "description",
-        content:
-          "150+ social media and campaign assets across Indian sports leagues, produced live alongside matches and events.",
-      },
-      { property: "og:title", content: "Live from the Field — Sportz Interactive" },
-      {
-        property: "og:description",
-        content: "Designing fast, accurately, and consistently — where the match doesn't wait and neither does the deadline.",
-      },
-    ],
-  }),
-});
 
 const teams = [
   {
@@ -142,3 +124,5 @@ function SportzInteractivePage() {
     </Container>
   );
 }
+
+export default SportzInteractivePage;

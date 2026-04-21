@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import projectarch from "@/assets/icons/3d architecture.png";
 import projectgears from "@/assets/icons/gears.png";
@@ -12,19 +12,6 @@ import projectcomdaily from "@/assets/icons/favicon.png";
 import projectiba from "@/assets/icons/iba.png";
 import projectDC from "@/assets/icons/DC.png";
 
-export const Route = createFileRoute("/about")({
-  component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About Me — Saurabh Jha" },
-      {
-        name: "description",
-        content:
-          "UX Designer passionate about systems, structure, and meaningful digital experiences.",
-      },
-    ],
-  }),
-});
 
 type Side = "left" | "right";
 
@@ -200,3 +187,4 @@ function AboutPage() {
     </section>
   );
 }
+export default AboutPage;

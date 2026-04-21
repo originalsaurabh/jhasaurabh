@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import profilePhoto from "@/assets/profile-photo.png";
@@ -11,15 +11,6 @@ import saathiLogo from "@/assets/icons/Saathi.png";
 import sportzLogo from "@/assets/icons/SI.png";
 import vistaLogo from "@/assets/icons/vista.png";
 
-export const Route = createFileRoute("/resume")({
-  component: ResumePage,
-  head: () => ({
-    meta: [
-      { title: "Resume — Saurabh Jha" },
-      { name: "description", content: "UX & Service Designer with 6+ years of experience." },
-    ],
-  }),
-});
 
 interface ExperienceItem {
   logo: string;
@@ -511,3 +502,5 @@ function ResumeSection({ label, children }: { label: string; children: React.Rea
   );
 }
 
+
+export default ResumeSection;

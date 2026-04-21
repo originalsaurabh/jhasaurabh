@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectTasksync from "@/assets/project-tasksync.jpg";
 import designProcessIllustration from "@/assets/Projects/TaskSync/design-process-illustration.jpg";
 import competitiveAnalysisTable from "@/assets/Projects/TaskSync/competitive-analysis-table.jpg";
@@ -20,19 +20,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-export const Route = createFileRoute("/case-studies/tasksync")({
-  component: TaskSyncPage,
-  head: () => ({
-    meta: [
-      { title: "TaskSync — Redesigning the University LMS Experience" },
-      {
-        name: "description",
-        content:
-          "TaskSync: a unified central application replacing fragmented learning management systems for students, professors, and administration.",
-      },
-    ],
-  }),
-});
 
 
 /* ---------- Page ---------- */
@@ -422,3 +409,5 @@ function TaskSyncPage() {
     </Container>
   );
 }
+
+export default TaskSyncPage;

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectSaathi from "@/assets/Projects/Saathi/Saathi Cover.png";
 import {
   Container,
@@ -11,24 +11,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-export const Route = createFileRoute("/case-studies/saathi-pads")({
-  component: SaathiPadsPage,
-  head: () => ({
-    meta: [
-      { title: "Saathi Pads: One Designer, Every Touchpoint" },
-      {
-        name: "description",
-        content:
-          "End-to-end creative ownership across brand identity, e-commerce UX, packaging, and marketing campaigns for a D2C women's health brand.",
-      },
-      { property: "og:title", content: "Saathi Pads — One Designer, Every Touchpoint" },
-      {
-        property: "og:description",
-        content: "Brand foundation, conversion-focused redesign, and end-to-end campaign work for a D2C women's health brand.",
-      },
-    ],
-  }),
-});
 
 function SaathiPadsPage() {
   return (
@@ -201,3 +183,5 @@ function SaathiPadsPage() {
     </Container>
   );
 }
+
+export default SaathiPadsPage;

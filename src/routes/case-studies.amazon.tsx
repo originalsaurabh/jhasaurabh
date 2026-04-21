@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectAmazon from "@/assets/Projects/Amazon/Amazon.png";
 import scenario1 from "@/assets/Projects/Amazon/Scenario-1.jpg";
 import scenario2 from "@/assets/Projects/Amazon/Scenario-2.jpg";
@@ -14,24 +14,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-export const Route = createFileRoute("/case-studies/amazon")({
-  component: AmazonPage,
-  head: () => ({
-    meta: [
-      { title: "Optimizing Conveyor Merge Flow at Amazon Sortation Center" },
-      {
-        name: "description",
-        content:
-          "Systems thinking case study: how flow control at the merge—not unload speed—drives sortation throughput and labor efficiency.",
-      },
-      { property: "og:title", content: "Optimizing Conveyor Merge Flow at Amazon Sortation Center" },
-      {
-        property: "og:description",
-        content: "Lean / Theory of Constraints applied to inbound parcel flow at an Amazon Sortation Center.",
-      },
-    ],
-  }),
-});
 
 function AmazonPage() {
   return (
@@ -219,3 +201,5 @@ function AmazonPage() {
     </Container>
   );
 }
+
+export default AmazonPage;

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import projectComdaily from "@/assets/project-comdaily.png";
 import componentcollage from "@/assets/Projects/comdaily/cover.png";
 import componentLibraryOverview from "@/assets/Projects/comdaily/Design system (2).png";
@@ -16,24 +16,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-export const Route = createFileRoute("/case-studies/comdaily")({
-  component: ComdailyPage,
-  head: () => ({
-    meta: [
-      { title: "Building comdaily's Foundation: A Scalable Design System from 0→1" },
-      {
-        name: "description",
-        content:
-          "How I built comdaily's first scalable design system — tokens, components, usage rules, and the cross-team adoption to make it stick.",
-      },
-      { property: "og:title", content: "Building comdaily's Foundation — Design System Case Study" },
-      {
-        property: "og:description",
-        content: "Tokens, components, and cross-team adoption that unified comdaily's product and marketing UI.",
-      },
-    ],
-  }),
-});
 
 function ComdailyPage() {
   return (
@@ -266,3 +248,5 @@ function ComdailyPage() {
     </Container>
   );
 }
+
+export default ComdailyPage;

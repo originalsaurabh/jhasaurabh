@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -26,16 +26,6 @@ import ibaMid from "@/assets/Card images/iba mid.png";
 import ibaMidHover from "@/assets/Card images/iba mid hover.png";
 import ibaRight from "@/assets/Card images/iba right.png";
 import ibaRightHover from "@/assets/Card images/iba right hover.png";
-
-export const Route = createFileRoute("/")({
-  component: HomePage,
-  head: () => ({
-    meta: [
-      { title: "Saurabh Jha — UX Designer" },
-      { name: "description", content: "Making products your users don't need instructions for." },
-    ],
-  }),
-});
 
 const testimonials = [
   {
@@ -256,3 +246,6 @@ function HomePage() {
     </div>
   );
 }
+
+
+export default HomePage;
