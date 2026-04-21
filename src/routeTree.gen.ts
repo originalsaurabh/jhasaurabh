@@ -15,6 +15,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesTasksyncRouteImport } from './routes/case-studies.tasksync'
+import { Route as CaseStudiesSportzInteractiveRouteImport } from './routes/case-studies.sportz-interactive'
+import { Route as CaseStudiesSaathiPadsRouteImport } from './routes/case-studies.saathi-pads'
+import { Route as CaseStudiesIbaCosmeticsRouteImport } from './routes/case-studies.iba-cosmetics'
+import { Route as CaseStudiesComdailyRouteImport } from './routes/case-studies.comdaily'
+import { Route as CaseStudiesAmazonRouteImport } from './routes/case-studies.amazon'
 
 const ResumeRoute = ResumeRouteImport.update({
   id: '/resume',
@@ -46,12 +51,43 @@ const CaseStudiesTasksyncRoute = CaseStudiesTasksyncRouteImport.update({
   path: '/case-studies/tasksync',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesSportzInteractiveRoute =
+  CaseStudiesSportzInteractiveRouteImport.update({
+    id: '/case-studies/sportz-interactive',
+    path: '/case-studies/sportz-interactive',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CaseStudiesSaathiPadsRoute = CaseStudiesSaathiPadsRouteImport.update({
+  id: '/case-studies/saathi-pads',
+  path: '/case-studies/saathi-pads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesIbaCosmeticsRoute = CaseStudiesIbaCosmeticsRouteImport.update({
+  id: '/case-studies/iba-cosmetics',
+  path: '/case-studies/iba-cosmetics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesComdailyRoute = CaseStudiesComdailyRouteImport.update({
+  id: '/case-studies/comdaily',
+  path: '/case-studies/comdaily',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesAmazonRoute = CaseStudiesAmazonRouteImport.update({
+  id: '/case-studies/amazon',
+  path: '/case-studies/amazon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
+  '/case-studies/amazon': typeof CaseStudiesAmazonRoute
+  '/case-studies/comdaily': typeof CaseStudiesComdailyRoute
+  '/case-studies/iba-cosmetics': typeof CaseStudiesIbaCosmeticsRoute
+  '/case-studies/saathi-pads': typeof CaseStudiesSaathiPadsRoute
+  '/case-studies/sportz-interactive': typeof CaseStudiesSportzInteractiveRoute
   '/case-studies/tasksync': typeof CaseStudiesTasksyncRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
@@ -60,6 +96,11 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
+  '/case-studies/amazon': typeof CaseStudiesAmazonRoute
+  '/case-studies/comdaily': typeof CaseStudiesComdailyRoute
+  '/case-studies/iba-cosmetics': typeof CaseStudiesIbaCosmeticsRoute
+  '/case-studies/saathi-pads': typeof CaseStudiesSaathiPadsRoute
+  '/case-studies/sportz-interactive': typeof CaseStudiesSportzInteractiveRoute
   '/case-studies/tasksync': typeof CaseStudiesTasksyncRoute
   '/case-studies': typeof CaseStudiesIndexRoute
 }
@@ -69,6 +110,11 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
+  '/case-studies/amazon': typeof CaseStudiesAmazonRoute
+  '/case-studies/comdaily': typeof CaseStudiesComdailyRoute
+  '/case-studies/iba-cosmetics': typeof CaseStudiesIbaCosmeticsRoute
+  '/case-studies/saathi-pads': typeof CaseStudiesSaathiPadsRoute
+  '/case-studies/sportz-interactive': typeof CaseStudiesSportzInteractiveRoute
   '/case-studies/tasksync': typeof CaseStudiesTasksyncRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
@@ -79,6 +125,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/resume'
+    | '/case-studies/amazon'
+    | '/case-studies/comdaily'
+    | '/case-studies/iba-cosmetics'
+    | '/case-studies/saathi-pads'
+    | '/case-studies/sportz-interactive'
     | '/case-studies/tasksync'
     | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +138,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/resume'
+    | '/case-studies/amazon'
+    | '/case-studies/comdaily'
+    | '/case-studies/iba-cosmetics'
+    | '/case-studies/saathi-pads'
+    | '/case-studies/sportz-interactive'
     | '/case-studies/tasksync'
     | '/case-studies'
   id:
@@ -95,6 +151,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/resume'
+    | '/case-studies/amazon'
+    | '/case-studies/comdaily'
+    | '/case-studies/iba-cosmetics'
+    | '/case-studies/saathi-pads'
+    | '/case-studies/sportz-interactive'
     | '/case-studies/tasksync'
     | '/case-studies/'
   fileRoutesById: FileRoutesById
@@ -104,6 +165,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ResumeRoute: typeof ResumeRoute
+  CaseStudiesAmazonRoute: typeof CaseStudiesAmazonRoute
+  CaseStudiesComdailyRoute: typeof CaseStudiesComdailyRoute
+  CaseStudiesIbaCosmeticsRoute: typeof CaseStudiesIbaCosmeticsRoute
+  CaseStudiesSaathiPadsRoute: typeof CaseStudiesSaathiPadsRoute
+  CaseStudiesSportzInteractiveRoute: typeof CaseStudiesSportzInteractiveRoute
   CaseStudiesTasksyncRoute: typeof CaseStudiesTasksyncRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
@@ -152,6 +218,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesTasksyncRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/sportz-interactive': {
+      id: '/case-studies/sportz-interactive'
+      path: '/case-studies/sportz-interactive'
+      fullPath: '/case-studies/sportz-interactive'
+      preLoaderRoute: typeof CaseStudiesSportzInteractiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/saathi-pads': {
+      id: '/case-studies/saathi-pads'
+      path: '/case-studies/saathi-pads'
+      fullPath: '/case-studies/saathi-pads'
+      preLoaderRoute: typeof CaseStudiesSaathiPadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/iba-cosmetics': {
+      id: '/case-studies/iba-cosmetics'
+      path: '/case-studies/iba-cosmetics'
+      fullPath: '/case-studies/iba-cosmetics'
+      preLoaderRoute: typeof CaseStudiesIbaCosmeticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/comdaily': {
+      id: '/case-studies/comdaily'
+      path: '/case-studies/comdaily'
+      fullPath: '/case-studies/comdaily'
+      preLoaderRoute: typeof CaseStudiesComdailyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/amazon': {
+      id: '/case-studies/amazon'
+      path: '/case-studies/amazon'
+      fullPath: '/case-studies/amazon'
+      preLoaderRoute: typeof CaseStudiesAmazonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -160,6 +261,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ResumeRoute: ResumeRoute,
+  CaseStudiesAmazonRoute: CaseStudiesAmazonRoute,
+  CaseStudiesComdailyRoute: CaseStudiesComdailyRoute,
+  CaseStudiesIbaCosmeticsRoute: CaseStudiesIbaCosmeticsRoute,
+  CaseStudiesSaathiPadsRoute: CaseStudiesSaathiPadsRoute,
+  CaseStudiesSportzInteractiveRoute: CaseStudiesSportzInteractiveRoute,
   CaseStudiesTasksyncRoute: CaseStudiesTasksyncRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }

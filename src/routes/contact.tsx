@@ -15,15 +15,18 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <section className="mx-auto max-w-[1152px] px-6 py-20">
+      <div className="max-w-[846px] mx-auto">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <h1 className="text-3xl md:text-4xl">
-          If it involves design, systems, or making things better. I'm in.
+        <h1 className="text-2xl md:text-3xl">
+          If it involves design, systems, or making things better. 
+          I'm in.
         </h1>
         <p className="mt-4 text-muted-foreground">
           I'm currently open to UX/UI, product design, and design systems roles across Germany and Europe.
         </p>
         <p className="mt-2 text-muted-foreground">Fastest way to reach me? Probably still this.</p>
       </motion.div>
+      </div>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         <motion.div
@@ -63,13 +66,13 @@ function ContactPage() {
         <p className="mt-1 text-sm text-muted-foreground">Proof I'm Legit.</p>
         <div className="mt-6 flex items-center justify-center gap-6">
           <a href="https://www.linkedin.com/in/saurabhjha95" target="_blank" rel="noopener noreferrer"
-            className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0077B5] text-primary-foreground text-xl font-bold">
+            className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0077B5] text-primary-foreground text-2xl font-bold">
             in
           </a>
-          <a href="#" className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#1769FF] text-primary-foreground text-xl font-bold">
+          <a href="https://www.behance.net/saurabhjha" className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#1769FF] text-primary-foreground text-2xl font-bold">
             Bē
           </a>
-          <a href="#" className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#EA4C89] text-primary-foreground text-xl font-bold">
+          <a href="https://www.dribbble.com/saurabhjha" className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#EA4C89] text-primary-foreground text-2xl font-bold">
             ✦
           </a>
         </div>

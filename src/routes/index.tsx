@@ -101,7 +101,7 @@ function HomePage() {
         >
           <span
             className="inline-flex items-center gap-2 rounded-[22px] px-4 py-2 text-sm font-medium text-white"
-            style={{ background: "rgba(59, 35, 19, 0.50)" }}
+            style={{ background: "rgba(59, 35, 19, 0.80)" }}
           >
             <span className="relative flex h-5 w-5 items-center justify-center">
               {/* Outer halo — fades in/out */}
@@ -115,7 +115,7 @@ function HomePage() {
                 style={{ background: "#1EFF00" }}
               />
             </span>
-            Available Now
+            Available Now for Design Roles
           </span>
 
           <p className="text-[24px] font-semibold leading-[34.8px] text-black">
@@ -180,7 +180,7 @@ function HomePage() {
             type="Case Study"
             description="Created a scalable design system used across product and marketing."
             role="UX Designer"
-            linkTo="/case-studies"
+            linkTo="/case-studies/comdaily"
           />
           <ProjectCard
             cover={tsCover}
@@ -212,7 +212,7 @@ function HomePage() {
             type="Case Study"
             description="Improved conversion and built a consistent brand experience."
             role="Visual Designer"
-            linkTo="/case-studies"
+            linkTo="/case-studies/iba-cosmetics"
           />
         </div>
       </section>

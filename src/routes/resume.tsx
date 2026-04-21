@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import profilePhoto from "@/assets/profile-photo.png";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const Route = createFileRoute("/resume")({
   component: ResumePage,
@@ -28,39 +28,24 @@ const experience: ExperienceItem[] = [
     title: "UX Design Intern @ ",
     company: "comdaily",
     period: "Jun-Sep 2025 | ",
-    location: "Cologne, Germany",
-    details: [
-      "Built a design system of 30+ reusable Figma components covering UI patterns, typography tokens, spacing rules, and design tokens - reducing developer revision rounds by approximately 25-30% and eliminating the most common class of handoff errors across a 5-screen landing page and 25-screen dashboard redesign.",
-      "Redesigned core workflow dashboards by observing how 8 internal users navigated daily tasks, identified two key bottlenecks causing repeated context-switching, and proposed a consolidated task view that was prioritised in the next sprint",
-      "Challenged the initial brief for a full dashboard overhaul by presenting a component-level refresh as an alternative, validated it with users, and got it adopted by the team - saving an estimated two sprint cycles without compromising the usability goals",
-      "Redesigned and standardised investor pitch decks by building a master Figma template flexible enough for multiple pitch contexts, used across 7-9 events during the placement and still in active use by the team after the internship ended"
-    ],
+    location: "Koln, Germany",
+    details: ["Contributed to UX research and interface design for the brand monitoring platform."],
   },
   {
     logo: "🖼️",
-    title: "Freelance UX & Visual Designer @ ",
-    company: "Independent Consultant",
+    title: "Visual Designer Consultant @ ",
+    company: "Endeavour Design Studio",
     period: "Feb 2021 – Apr 2024 | ",
     location: "Remote – Global Clients",
-    details: 
-    [
-      "IBA Cosmetics: Identified a UX problem without being briefed on it - mapped the existing e-commerce purchase journey, found the primary drop-off points, and redesigned the checkout flow with the client team. The client tracked 35% revenue growth in the year following launch against their pre-launch baseline",
-      "Mondelez India: Produced digital advertising and social media assets across Oreo, Bournvita, Cadbury, and Gems product lines. Automated the artwork resizing workflow in Adobe Illustrator, eliminating manual resizing across 10+ platform formats per campaign and freeing the team from a repeatable production task on every cycle",
-      "MICARAA Cosmetics (Germany): Designed packaging for 10 product lines for a German cosmetics brand, working directly with the client team from concept to print-ready production. All 10 designs entered full commercial production.",
-      "Managed all project phases independently - from scoping and research through to design and handoff - across multiple concurrent clients, consistently meeting deadlines and earning repeat business."
-    ],
+    details: ["Delivered visual design consulting for global clients across multiple industries."],
   },
   {
     logo: "🌿",
-    title: "Senior Designer @ ",
+    title: "Senior Designer & Digital Marketing Executive @ ",
     company: "Saathi Pads",
     period: "Sep 2020 – Feb 2021 | ",
     location: "Ahmedabad, India",
-    details: [
-      "Led the end-to-end redesign of the company website as the sole designer - owning all design and UX decisions and presenting rationale directly to stakeholders. The redesign drove conversion from 1.8% to 3.4%, reduced checkout drop-offs by approximately 22%, and grew sessions by approximately 35%.",
-      "Owned creative production across 15+ simultaneous marketing campaigns within a $2M budget - directing timelines, creative resources, and review cycles to consistent on-time delivery",
-      "Designed pitch decks and investor communication assets for MIT D-Lab and UNDP GSIV, contributing to funding conversations totalling $5M in new opportunities through clear visual storytelling."
-    ],
+    details: ["Led brand design and digital marketing for sustainable menstrual products."],
   },
   {
     logo: "🏏",
@@ -68,10 +53,7 @@ const experience: ExperienceItem[] = [
     company: "Sportz Interactive",
     period: "Oct 2018 – Jan 2020 | ",
     location: "Mumbai, India",
-    details: [
-      "Produced 150+ social media and campaign assets for IPL and ISL under live event conditions - no revision cycles, real-time delivery - across campaigns reaching over 5 million followers. Contributed vector and SVG assets to the development team for sports client applications, requiring precision UI-ready file production.",
-      "Developed speed and quality discipline under sustained production pressure that directly informs current approach to high-output design system work and component production."
-    ],
+    details: ["Designed sports media graphics for major cricket leagues and teams."],
   },
   {
     logo: "🖨️",
@@ -79,10 +61,7 @@ const experience: ExperienceItem[] = [
     company: "Vistaprint India (Cimpress)",
     period: "Oct 2017 – Oct 2018 | ",
     location: "Ahmedabad, India",
-    details: [
-      "Produced high-volume print and digital assets for US, UK, and Australian customers to exact brand and pre-press specifications, building a precision-first design discipline that carries through to current Figma component and handoff work.",
-      "Developed client research techniques adopted team-wide, and was invited to deliver a workflow and research training programme for 120 designers - demonstrating early ability to systematise and share design knowledge across large teams."
-    ],
+    details: ["Created print and digital designs at scale for the mass customization platform."],
   },
 ];
 
@@ -93,10 +72,6 @@ const education = [
     school: "PFH Private Hochschule",
     date: "Sep 2025",
     location: "Göttingen, Germany",
-    details={[
-              "Thesis: Defined user and market requirements for AI-driven LMS platforms by conducting semi-structured interviews with 10 university stakeholders across three roles (students, instructors, administrators), building role-specific personas, and auditing four competing platforms (Blackboard, Canvas, Moodle, Stud.IP). Findings produced four concrete design recommendations directly tied to observed behaviour and market gaps: unified workflow ecosystems, mobile-first UX, privacy-first AI assistants (with GDPR-compliant data handling), and curriculum mapping tools. ",
-              "Programme project TaskSync: Led end-to-end UX design of an AI-enhanced LMS, including user research, persona development, information architecture, wireframing, journey mapping, and a 32-screen high-fidelity Figma prototype built with Auto Layout and a scalable component library"
-            ]}
   },
   {
     logo: "🎨",
@@ -332,10 +307,7 @@ function ResumePage() {
                 <p style={itemRegular}>Apr-Jul 2024 | Göttingen, Germany</p>
               </>
             }
-            details={[
-              "Thesis: Defined user and market requirements for AI-driven LMS platforms by conducting semi-structured interviews with 10 university stakeholders across three roles (students, instructors, administrators), building role-specific personas, and auditing four competing platforms (Blackboard, Canvas, Moodle, Stud.IP). Findings produced four concrete design recommendations directly tied to observed behaviour and market gaps: unified workflow ecosystems, mobile-first UX, privacy-first AI assistants (with GDPR-compliant data handling), and curriculum mapping tools. ",
-              "Programme project TaskSync: Led end-to-end UX design of an AI-enhanced LMS, including user research, persona development, information architecture, wireframing, journey mapping, and a 32-screen high-fidelity Figma prototype built with Auto Layout and a scalable component library"
-            ]}
+            details={["Unified central application replacing fragmented learning management systems."]}
           />
         </div>
       </ResumeSection>
@@ -356,10 +328,6 @@ function ResumePage() {
                 <div className="flex items-start justify-between gap-4">
                   <span style={itemRegular}>{edu.school}</span>
                   <span style={{ ...itemRegular, textAlign: "right" }}>{edu.location}</span>
-                </div>
-                <div className="flex items-start justify-between gap-4">
-                  <span style={itemRegular}>{edu.details}</span>
-                                  
                 </div>
               </div>
             </div>

@@ -87,8 +87,8 @@ export function ProjectCard({
             object-cover object-top
             shadow-md
             transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-            group-hover:left-[39.32px]
-            group-hover:top-[101.69px]
+            group-hover:left-[50px]
+            group-hover:top-[95px]
             group-hover:-rotate-[5deg]
           "
         />

@@ -1,6 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { createFileRoute } from "@tanstack/react-router";
 import projectTasksync from "@/assets/project-tasksync.jpg";
+import {
+  Container,
+  Content,
+  CaseStudyHeader,
+  H2,
+  Body,
+  BodyBold,
+  BulletList,
+  Section,
+  Placeholder,
+  BackLink,
+} from "@/components/case-study.shared";
 
 export const Route = createFileRoute("/case-studies/tasksync")({
   component: TaskSyncPage,
@@ -16,220 +27,24 @@ export const Route = createFileRoute("/case-studies/tasksync")({
   }),
 });
 
-/* ---------- Reusable section blocks ---------- */
-
-function H2({ children }: { children: React.ReactNode }) {
-  return (
-    <h2
-      style={{
-        color: "#000",
-        fontSize: 24,
-        fontFamily: "Inter, sans-serif",
-        fontWeight: 600,
-        lineHeight: "26.4px",
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
-
-function Body({ children }: { children: React.ReactNode }) {
-  return (
-    <p
-      style={{
-        color: "#000",
-        fontSize: 16,
-        fontFamily: "Inter, sans-serif",
-        fontWeight: 400,
-        lineHeight: "22px",
-      }}
-    >
-      {children}
-    </p>
-  );
-}
-
-function BodyBold({ children }: { children: React.ReactNode }) {
-  return (
-    <p
-      style={{
-        color: "#000",
-        fontSize: 16,
-        fontFamily: "Inter, sans-serif",
-        fontWeight: 700,
-        lineHeight: "22px",
-      }}
-    >
-      {children}
-    </p>
-  );
-}
-
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul
-      style={{
-        color: "#000",
-        fontSize: 16,
-        fontFamily: "Inter, sans-serif",
-        fontWeight: 400,
-        lineHeight: "22px",
-        paddingLeft: 20,
-        margin: 0,
-      }}
-      className="list-disc space-y-1"
-    >
-      {items.map((it, i) => (
-        <li key={i}>{it}</li>
-      ))}
-    </ul>
-  );
-}
-
-function Section({ children }: { children: React.ReactNode }) {
-  return <div className="w-full max-w-[900px] space-y-3">{children}</div>;
-}
-
-function Placeholder({
-  label,
-  height = 337,
-}: {
-  label: string;
-  height?: number;
-}) {
-  return (
-    <div
-      className="w-full max-w-[900px] rounded-md flex items-center justify-center"
-      style={{
-        height,
-        background: "#E9EBE6",
-        color: "#6b6b6b",
-        fontSize: 14,
-        fontFamily: "Inter, sans-serif",
-      }}
-    >
-      {label}
-    </div>
-  );
-}
-
-/* ---------- Inline icons ---------- */
-
-const TimelineIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-    <rect x="2.5" y="3.75" width="15" height="13.75" rx="2" stroke="#000" strokeWidth="1.5" />
-    <path d="M2.5 7.5h15M6.25 2.5v2.5M13.75 2.5v2.5" stroke="#000" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
-const RoleIcon = () => (
-  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden>
-    <circle cx="9" cy="6" r="3.25" stroke="#100F0D" strokeWidth="1.5" />
-    <path d="M2.5 18c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5" stroke="#100F0D" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
-const SkillsIcon = () => (
-  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden>
-    <circle cx="2.4" cy="2.3" r="1.7" fill="#100F0D" />
-    <circle cx="2.4" cy="9" r="1.7" fill="#100F0D" />
-    <circle cx="2.4" cy="15.7" r="1.7" fill="#100F0D" />
-    <rect x="7.1" y="1.3" width="12.9" height="2" rx="1" fill="#100F0D" />
-    <rect x="7.1" y="8" width="12.9" height="2" rx="1" fill="#100F0D" />
-    <rect x="7.1" y="14.7" width="12.9" height="2" rx="1" fill="#100F0D" />
-  </svg>
-);
 
 /* ---------- Page ---------- */
 
 function TaskSyncPage() {
   return (
-    <article className="w-full">
-      {/* COVER IMAGE */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="w-full flex items-center justify-center"
-        style={{ background: "#E2F397" }}
-      >
-        <img
-          src={projectTasksync}
-          alt="TaskSync — LMS & Productivity App cover"
-          className="w-full max-w-[1280px] object-cover"
-          style={{ height: "auto", aspectRatio: "1280 / 690" }}
-        />
-      </motion.div>
+    <Container>
+      <CaseStudyHeader
+        cover={projectTasksync}
+        coverAlt="TaskSync — LMS & Productivity App cover"
+        title="TaskSync - Redesigning the University LMS Experience"
+        subtitle="Unified central application replacing fragmented learning management systems"
+        timeline="April - July 2024"
+        role="UX Designer"
+        skills="Research · Ideation · IA · UI · Concept Design"
+        coverBackground="#E2F397"
+      />
 
-      {/* HEADER */}
-      <header className="w-full flex flex-col items-center px-6 md:px-[240px] py-10 gap-4">
-        <h1
-          className="w-full max-w-[900px]"
-          style={{
-            color: "#000",
-            fontSize: 24,
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 600,
-            lineHeight: "26.4px",
-          }}
-        >
-          TaskSync - Redesigning the University LMS Experience
-        </h1>
-        <p
-          className="w-full max-w-[900px]"
-          style={{
-            color: "#000",
-            fontSize: 16,
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 400,
-            lineHeight: "17.6px",
-          }}
-        >
-          Unified central application replacing fragmented learning management systems
-        </p>
-
-        <div className="w-full max-w-[900px] flex flex-col sm:flex-row items-start gap-6 sm:gap-4">
-          {[
-            { icon: <TimelineIcon />, label: "Timeline", value: "April - July 2024" },
-            { icon: <RoleIcon />, label: "Role", value: "UX Designer" },
-            {
-              icon: <SkillsIcon />,
-              label: "Leveraged Skills",
-              value: "Research · Ideation · IA · UI · Concept Design",
-            },
-          ].map((m) => (
-            <div key={m.label} className="flex-1 flex flex-col items-start gap-1">
-              <div className="flex items-center gap-1">
-                {m.icon}
-                <span
-                  style={{
-                    color: "#000",
-                    fontSize: 16,
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    lineHeight: "17.6px",
-                  }}
-                >
-                  {m.label}
-                </span>
-              </div>
-              <span
-                style={{
-                  color: "#000",
-                  fontSize: 14,
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  lineHeight: "15.4px",
-                }}
-              >
-                {m.value}
-              </span>
-            </div>
-          ))}
-        </div>
-      </header>
-
-      {/* BODY */}
-      <div className="w-full flex flex-col items-center px-6 md:px-[240px] pb-20 gap-6">
+      <Content>
         <Section>
           <H2>Project Overview</H2>
           <Body>
@@ -553,12 +368,8 @@ function TaskSyncPage() {
           </Body>
         </Section>
 
-        <div className="w-full max-w-[900px] pt-6">
-          <Link to="/case-studies" className="text-sm text-primary hover:underline">
-            ← Back to Case Studies
-          </Link>
-        </div>
-      </div>
-    </article>
+        <BackLink to="/case-studies">← Back to Case Studies</BackLink>
+      </Content>
+    </Container>
   );
 }

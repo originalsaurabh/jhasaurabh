@@ -22,17 +22,17 @@ export const Route = createFileRoute("/case-studies/")({
 });
 
 const projects = [
-  { image: projectComdaily, title: "comdaily", year: "2025", link: "/case-studies" },
+  { image: projectComdaily, title: "comdaily", year: "2025", link: "/case-studies/comdaily" },
   { image: projectTasksync, title: "TaskSync", year: "2024", link: "/case-studies/tasksync" },
-  { image: projectIba, title: "Iba Cosmetics", year: "2024", link: "/case-studies" },
-  { image: projectAmazon, title: "Amazon", year: "2026", link: "/case-studies" },
-  { image: projectSaathi, title: "Saathi Pads", year: "2022", link: "/case-studies" },
+  { image: projectIba, title: "Iba Cosmetics", year: "2024", link: "/case-studies/iba-cosmetics" },
+  { image: projectAmazon, title: "Amazon", year: "2026", link: "/case-studies/amazon" },
+  { image: projectSaathi, title: "Saathi Pads", year: "2022", link: "/case-studies/saathi-pads" },
   {
     image: projectSportz,
     title: "Sportz Interactive",
     year: "2020",
     linkLabel: "View Gallery →",
-    link: "/case-studies",
+    link: "/case-studies/sportz-interactive",
   },
 ];
 
