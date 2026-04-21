@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import projectComdaily from "@/assets/project-comdaily.png";
+import componentcollage from "@/assets/Projects/comdaily/cover.png";
+import componentLibraryOverview from "@/assets/Projects/comdaily/Design system (2).png";
+import navigationBar from "@/assets/Projects/comdaily/Menu bar.png";
 import {
   Container,
   Content,
@@ -167,11 +170,27 @@ function ComdailyPage() {
           />
         </Section>
 
-        <Placeholder label="Component Library Overview (900 × 563)" height={563} />
+        <img
+          src={componentcollage}
+          alt="comdaily component library overview"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
         <Section><H3>Buttons</H3></Section>
-        <Placeholder label="Buttons (900 × 271)" height={271} />
+        
+        <img
+          src={componentLibraryOverview}
+          alt="comdaily component library overview"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
         <Section><H3>Navigation Bar</H3></Section>
-        <Placeholder label="Navigation Bar (900 × 65)" height={65} />
+        <img
+          src={navigationBar}
+          alt="comdaily navigation bar design"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Design Process — Application &amp; Validation (Marketing)</H2>

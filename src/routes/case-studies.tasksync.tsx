@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import projectTasksync from "@/assets/project-tasksync.jpg";
+import designProcessIllustration from "@/assets/Projects/TaskSync/design-process-illustration.jpg";
+import competitiveAnalysisTable from "@/assets/Projects/TaskSync/competitive-analysis-table.jpg";
+import userPersonaCard from "@/assets/Projects/TaskSync/user-persona-card.jpg";
+import empathyMap from "@/assets/Projects/TaskSync/empathy-map.jpg";
+import userFlowDiagram from "@/assets/Projects/TaskSync/user-flow-diagram.jpg";
+import calendarScreens from "@/assets/Projects/TaskSync/calendar-screens.jpg";
+import handDrawnWireframes from "@/assets/Projects/TaskSync/hand-drawn-wireframes.jpg";
+import uiScreens from "@/assets/Projects/TaskSync/tasksync-ui-screen.jpg";
 import {
   Container,
   Content,
@@ -9,7 +17,6 @@ import {
   BodyBold,
   BulletList,
   Section,
-  Placeholder,
   BackLink,
 } from "@/components/case-study.shared";
 
@@ -108,7 +115,12 @@ function TaskSyncPage() {
           </Body>
         </Section>
 
-        <Placeholder label="Design Process Diagram (899 × 337)" />
+        <img
+          src={designProcessIllustration}
+          alt="TaskSync design process illustration"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <Body>
@@ -146,7 +158,12 @@ function TaskSyncPage() {
           <H2>Competitive Analysis</H2>
         </Section>
 
-        <Placeholder label="Competitive Analysis Table (899 × 337)" />
+        <img
+          src={competitiveAnalysisTable}
+          alt="TaskSync competitive analysis table"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <Body>A competitive analysis was conducted to evaluate commonly used LMS platforms and academic tools.</Body>
@@ -184,7 +201,12 @@ function TaskSyncPage() {
           />
         </Section>
 
-        <Placeholder label="Sarah Jane Persona Card (900 × 562)" height={562} />
+        <img
+          src={userPersonaCard}
+          alt="Sarah Jane persona card"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Empathy Map</H2>
@@ -195,7 +217,12 @@ function TaskSyncPage() {
           </Body>
         </Section>
 
-        <Placeholder label="Empathy Map (900 × 388)" height={388} />
+        <img
+          src={empathyMap}
+          alt="TaskSync empathy map"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Ideate Phase – User Flow</H2>
@@ -206,7 +233,12 @@ function TaskSyncPage() {
           <Body>The goal was to reduce unnecessary steps and make each workflow intuitive and predictable.</Body>
         </Section>
 
-        <Placeholder label="User Flow Diagram (900 × 450)" height={450} />
+        <img
+          src={userFlowDiagram}
+          alt="TaskSync user flow diagram"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Solution Overview</H2>
@@ -233,7 +265,12 @@ function TaskSyncPage() {
           </Body>
         </Section>
 
-        <Placeholder label="Unified Calendar Screens (899 × 337)" />
+        <img
+          src={calendarScreens}
+          alt="TaskSync unified calendar screens"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Key Features - Centralized Communication Hub</H2>
@@ -288,7 +325,12 @@ function TaskSyncPage() {
           </Body>
         </Section>
 
-        <Placeholder label="Wireframes (899 × 337)" />
+        <img
+          src={handDrawnWireframes}
+          alt="TaskSync hand drawn wireframes"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Visual Design &amp; User Interface</H2>
@@ -299,7 +341,12 @@ function TaskSyncPage() {
           <Body>The interface aims to reduce visual noise and guide users naturally through their tasks.</Body>
         </Section>
 
-        <Placeholder label="Visual UI Screens (900 × 562)" height={562} />
+        <img
+          src={uiScreens}
+          alt="TaskSync visual UI screens"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Prototype</H2>
@@ -310,7 +357,9 @@ function TaskSyncPage() {
         </Section>
 
         <a
-          href="#"
+          href="https://www.figma.com/proto/trUk416c0rw5Aw978kmpdf/TaskSync-Final-Project?node-id=52-904&t=89DGKlFEvcgmNpPo-1"
+          target="_blank"
+          rel="noreferrer noopener"
           className="inline-flex items-center justify-center rounded-md transition-opacity hover:opacity-90"
           style={{
             padding: 10,

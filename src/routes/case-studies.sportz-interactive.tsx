@@ -1,5 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
 import projectSportz from "@/assets/Projects/Sportz/SI cover.png";
+import dcAshwin250 from "@/assets/Projects/Sportz/Delhi Capitals/Ashwin-250_P1.png";
+import dcAshwin from "@/assets/Projects/Sportz/Delhi Capitals/Ashwin.png";
+import dcKaif from "@/assets/Projects/Sportz/Delhi Capitals/Kaif.png";
+import dcMayank from "@/assets/Projects/Sportz/Delhi Capitals/Mayank.png";
+import dcMishra from "@/assets/Projects/Sportz/Delhi Capitals/Mishra2.png";
+import dcMostSixes from "@/assets/Projects/Sportz/Delhi Capitals/Most-Sixes.png";
+import dcStarsAction from "@/assets/Projects/Sportz/Delhi Capitals/dc-stars-in-action-native.jpg";
+import giAway from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Away.png";
+import giDelhi1 from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Delhi-(1).jpg";
+import giDidYouKnow from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Didyouknow.jpg";
+import giHeadToHead from "@/assets/Projects/Sportz/Gujarat Fortune Giants/HeadToHead.jpg";
+import giLineUpStory from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Line-UP-Story.jpg";
+import giLineUp1 from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Line-Up_1.png";
+import giLineUp2 from "@/assets/Projects/Sportz/Gujarat Fortune Giants/Line-Up_2.png";
+import hockeyCountdown from "@/assets/Projects/Sportz/Hockey India/5-days-countdown.png";
+import hockeyCountdownInsta from "@/assets/Projects/Sportz/Hockey India/Countdown_insta.png";
+import hockeyGuess from "@/assets/Projects/Sportz/Hockey India/Guess.png";
+import hockeyGurjit from "@/assets/Projects/Sportz/Hockey India/gurjit.png";
+import steelersMatchAlbum from "@/assets/Projects/Sportz/Haryana Steelers/Match Album_PLAY_OFFS.png";
+import steelersQuiz from "@/assets/Projects/Sportz/Haryana Steelers/Steelers-QUIZ.jpg";
+import steelersStat from "@/assets/Projects/Sportz/Haryana Steelers/stat.png";
+import steelersTraining from "@/assets/Projects/Sportz/Haryana Steelers/training1.png";
+import steelersBirthday from "@/assets/Projects/Sportz/Haryana Steelers/Happy-Birthday-Sunil.png";
+import procamAdhm1 from "@/assets/Projects/Sportz/Procam International/ADHM-Infographic.png";
+import procamAdhm2 from "@/assets/Projects/Sportz/Procam International/ADHM-Infographic2.png";
+import procamCharity from "@/assets/Projects/Sportz/Procam International/Charity-Day-2019.png";
+import procamEndPlate from "@/assets/Projects/Sportz/Procam International/End-Plate.png";
+import procamTcsw10k from "@/assets/Projects/Sportz/Procam International/TCSW10K.png";
+import procamTmm from "@/assets/Projects/Sportz/Procam International/TMM.png";
+import procamTsk from "@/assets/Projects/Sportz/Procam International/TSK-infographic.jpg";
 import {
   Container,
   Content,
@@ -27,69 +57,64 @@ export const Route = createFileRoute("/case-studies/sportz-interactive")({
   }),
 });
 
-/* Placeholder image set — user will drop real files into:
-   src/assets/Projects/SportzInteractive/<TeamFolder>/
-   then we swap these to imports. */
-const placeholder = (w: number, h: number) =>
-  `https://placehold.co/${w}x${h}/E3DBE5/3B2313?text=Sportz`;
-
 const teams = [
   {
     title: "Delhi Capitals — Men's Cricket Team",
-    folder: "DelhiCapitals",
+    folder: "Delhi Capitals",
     images: [
-      { src: placeholder(262, 328), alt: "Delhi Capitals asset 1" },
-      { src: placeholder(328, 328), alt: "Delhi Capitals asset 2" },
-      { src: placeholder(262, 328), alt: "Delhi Capitals asset 3" },
-      { src: placeholder(262, 328), alt: "Delhi Capitals asset 4" },
-      { src: placeholder(262, 328), alt: "Delhi Capitals asset 5" },
-      { src: placeholder(328, 328), alt: "Delhi Capitals asset 6" },
+      { src: dcAshwin250, alt: "Delhi Capitals Ashwin highlight" },
+      { src: dcAshwin, alt: "Delhi Capitals Ashwin profile" },
+      { src: dcKaif, alt: "Delhi Capitals Kaif creative" },
+      { src: dcMayank, alt: "Delhi Capitals Mayank design" },
+      { src: dcMishra, alt: "Delhi Capitals Mishra asset" },
+      { src: dcMostSixes, alt: "Delhi Capitals Most Sixes graphic" },
     ],
   },
   {
     title: "Hockey India — Men's Team",
-    folder: "HockeyIndia",
+    folder: "Hockey India",
     images: [
-      { src: placeholder(262, 328), alt: "Hockey India asset 1" },
-      { src: placeholder(262, 328), alt: "Hockey India asset 2" },
-      { src: placeholder(328, 328), alt: "Hockey India asset 3" },
-      { src: placeholder(262, 328), alt: "Hockey India asset 4" },
+      { src: hockeyCountdown, alt: "Hockey India countdown creative" },
+      { src: hockeyCountdownInsta, alt: "Hockey India Instagram countdown asset" },
+      { src: hockeyGuess, alt: "Hockey India guess campaign" },
+      { src: hockeyGurjit, alt: "Hockey India Gurjit profile creative" },
     ],
   },
   {
     title: "Gujarat Fortune Giants — Men's Kabaddi Team",
-    folder: "GujaratFortuneGiants",
+    folder: "Gujarat Fortune Giants",
     images: [
-      { src: placeholder(262, 328), alt: "Gujarat Fortune Giants asset 1" },
-      { src: placeholder(262, 328), alt: "Gujarat Fortune Giants asset 2" },
-      { src: placeholder(328, 328), alt: "Gujarat Fortune Giants asset 3" },
-      { src: placeholder(262, 328), alt: "Gujarat Fortune Giants asset 4" },
-      { src: placeholder(262, 328), alt: "Gujarat Fortune Giants asset 5" },
-      { src: placeholder(262, 328), alt: "Gujarat Fortune Giants asset 6" },
+      { src: giAway, alt: "Gujarat Fortune Giants away asset" },
+      { src: giDelhi1, alt: "Gujarat Fortune Giants Delhi campaign" },
+      { src: giDidYouKnow, alt: "Gujarat Fortune Giants did-you-know asset" },
+      { src: giHeadToHead, alt: "Gujarat Fortune Giants head-to-head graphic" },
+      { src: giLineUpStory, alt: "Gujarat Fortune Giants line-up story asset" },
+      { src: giLineUp1, alt: "Gujarat Fortune Giants line-up design 1" },
+      { src: giLineUp2, alt: "Gujarat Fortune Giants line-up design 2" },
     ],
   },
   {
     title: "Haryana Steelers — Men's Kabaddi Team",
-    folder: "HaryanaSteelers",
+    folder: "Haryana Steelers",
     images: [
-      { src: placeholder(328, 328), alt: "Haryana Steelers asset 1" },
-      { src: placeholder(262, 328), alt: "Haryana Steelers asset 2" },
-      { src: placeholder(328, 328), alt: "Haryana Steelers asset 3" },
-      { src: placeholder(262, 328), alt: "Haryana Steelers asset 4" },
-      { src: placeholder(800, 328), alt: "Haryana Steelers banner" },
+      { src: steelersMatchAlbum, alt: "Haryana Steelers playoff match album" },
+      { src: steelersQuiz, alt: "Haryana Steelers quiz creative" },
+      { src: steelersStat, alt: "Haryana Steelers statistics asset" },
+      { src: steelersTraining, alt: "Haryana Steelers training creative" },
+      { src: steelersBirthday, alt: "Haryana Steelers birthday campaign" },
     ],
   },
   {
     title: "Procam International — Leading India's Marathon Race",
-    folder: "Procam",
+    folder: "Procam International",
     images: [
-      { src: placeholder(328, 328), alt: "Procam asset 1" },
-      { src: placeholder(328, 328), alt: "Procam asset 2" },
-      { src: placeholder(583, 328), alt: "Procam wide asset" },
-      { src: placeholder(262, 328), alt: "Procam asset 4" },
-      { src: placeholder(262, 328), alt: "Procam asset 5" },
-      { src: placeholder(262, 328), alt: "Procam asset 6" },
-      { src: placeholder(328, 328), alt: "Procam asset 7" },
+      { src: procamAdhm1, alt: "Procam ADHM infographic 1" },
+      { src: procamAdhm2, alt: "Procam ADHM infographic 2" },
+      { src: procamCharity, alt: "Procam charity day asset" },
+      { src: procamEndPlate, alt: "Procam end plate graphic" },
+      { src: procamTcsw10k, alt: "Procam TCSW10K campaign asset" },
+      { src: procamTmm, alt: "Procam TMM event creative" },
+      { src: procamTsk, alt: "Procam TSK infographic" },
     ],
   },
 ];

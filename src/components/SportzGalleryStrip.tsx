@@ -54,7 +54,7 @@ export function SportzGalleryStrip({ title, images }: SportzGalleryStripProps) {
         className="w-full overflow-x-auto"
         style={{ scrollbarWidth: "thin" }}
       >
-        <div className="flex items-stretch gap-6 px-2 pb-3" style={{ height: 328 }}>
+        <div className="flex items-stretch justify-center gap-6 px-2 pb-3" style={{ height: 328 }}>
           {images.map((img, i) => (
             <button
               key={i}

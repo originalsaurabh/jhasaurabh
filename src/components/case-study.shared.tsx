@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export function Container({ children }: ContainerProps) {
   return (
-    <article className="w-full flex flex-col items-center px-6 md:px-[240px] pb-20">
+    <article className="w-full flex flex-col items-center px-4 sm:px-6 md:px-12 lg:px-40 xl:px-60 pb-12 sm:pb-16 md:pb-20">
       {children}
     </article>
   );
@@ -49,12 +49,14 @@ export function CaseStudyHeader({
     { icon: <SkillsIcon />, label: "Leveraged Skills", value: skills },
   ];
 
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   return (
     <>
         <motion.div
-        initial={{ opacity: 0 }}
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4 }}
         style={{
             width: "100vw",
             background: coverBackground,
@@ -75,13 +77,13 @@ export function CaseStudyHeader({
         </div>
         </motion.div>
 
-      <header className="w-full flex flex-col items-center py-10 gap-4">
+      <header className="w-full flex flex-col items-center py-6 sm:py-8 md:py-10 gap-3 sm:gap-4">
         <H1>{title}</H1>
         <Body>{subtitle}</Body>
 
-        <div className="w-full max-w-[900px] flex flex-col sm:flex-row items-start gap-6 sm:gap-4">
+        <div className="w-full max-w-[900px] flex flex-col sm:flex-row items-start gap-4 sm:gap-3 px-4 sm:px-0">
           {metadata.map((item) => (
-            <div key={item.label} className="flex-1 flex flex-col items-start gap-1">
+            <div key={item.label} className="flex-1 flex flex-col items-start gap-1 min-w-0">
               <div className="flex items-center gap-1">
                 {item.icon}
                 <span style={labelStyle}>{item.label}</span>

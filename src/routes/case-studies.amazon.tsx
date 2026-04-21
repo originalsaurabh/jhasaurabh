@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import projectAmazon from "@/assets/Projects/Amazon/Amazon.png";
+import scenario1 from "@/assets/Projects/Amazon/Scenario-1.jpg";
+import scenario2 from "@/assets/Projects/Amazon/Scenario-2.jpg";
 import {
   Container,
   Content,
@@ -71,6 +73,13 @@ function AmazonPage() {
           </Body>
         </Section>
 
+        <img
+          src={scenario1}
+          alt="Amazon scenario 1 - overutilization at input"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
+
         <Section>
           <H2>Scenario 1 — Overutilization at the Input (Current State)</H2>
           <BodyBold>Process Setup:</BodyBold>
@@ -103,6 +112,13 @@ function AmazonPage() {
             activity but degrades overall efficiency.
           </Body>
         </Section>
+
+        <img
+          src={scenario2}
+          alt="Amazon scenario 2 - flow-controlled operation"
+          className="w-full max-w-[900px] rounded-md"
+          loading="lazy"
+        />
 
         <Section>
           <H2>Scenario 2 — Flow-Controlled Operation (Improved State)</H2>
