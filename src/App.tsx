@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import '@/styles.css';
+import ScrollToTop from "./components/ScrollToTop";
 
 // Route components - import the default exports from route files
 import Home from '@/routes/index';
@@ -56,6 +57,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Layout>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
