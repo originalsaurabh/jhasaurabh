@@ -20,14 +20,23 @@ export function ResumeButton({
   image4 = projectComdaily,
 }: ResumeButtonProps) {
   const button = (
-    <div className="resume-btn group relative inline-block" style={{ width: 154, height: 60 }} aria-label="Resume">
+    <div
+      className="resume-btn group relative inline-block"
+      style={{ width: 154, height: 60 }}
+      aria-label="Resume"
+    >
       <div
         className="absolute left-0 flex items-center justify-center rounded-full border border-[#3B2313] transition-all duration-300 ease-out bg-transparent group-hover:bg-[#3B2313]"
         style={{ width: 154, height: 47, top: 9, paddingLeft: 77, paddingRight: 16 }}
       >
         <span
           className="text-[#3B2313] transition-colors duration-300 group-hover:text-[#FFFBEE]"
-          style={{ fontFamily: "Inter, sans-serif", fontSize: 16, fontWeight: 500, lineHeight: "23.2px" }}
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: 16,
+            fontWeight: 500,
+            lineHeight: "23.2px",
+          }}
         >
           Resume
         </span>

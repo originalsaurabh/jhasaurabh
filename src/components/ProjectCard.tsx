@@ -25,13 +25,10 @@ export function ProjectCard({
   description,
   role,
 }: ProjectCardProps) {
-
   const card = (
     <div className="group relative w-[380px] h-[420px]">
-
       {/* CANVAS */}
       <div className="relative w-full h-[380px] overflow-visible">
-
         {/* MID */}
         <img
           src={mid}
@@ -111,16 +108,11 @@ export function ProjectCard({
           "
         >
           <div className="relative w-full h-full px-4">
-
             {/* TOP TEXT (MOVES WITH CARD) */}
             <div className="absolute top-4 left-4 right-4">
-              <p className="text-[10px] leading-[14.5px] font-medium text-black">
-                {type}
-              </p>
+              <p className="text-[10px] leading-[14.5px] font-medium text-black">{type}</p>
 
-              <p className="text-[10px] leading-[14.5px] font-medium text-black">
-                {year}
-              </p>
+              <p className="text-[10px] leading-[14.5px] font-medium text-black">{year}</p>
             </div>
 
             {/* TITLE (BOTTOM LOCKED) */}
@@ -132,10 +124,8 @@ export function ProjectCard({
             >
               {title}
             </h3>
-
           </div>
         </div>
-
       </div>
 
       {/* DESCRIPTION */}
@@ -154,7 +144,6 @@ export function ProjectCard({
         <br />
         <span className="text-black font-semibold">Role: {role}</span>
       </div>
-
     </div>
   );
 

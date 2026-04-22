@@ -50,10 +50,7 @@ export function SportzGalleryStrip({ title, images }: SportzGalleryStripProps) {
       </h2>
 
       {/* Horizontal scrollable strip */}
-      <div
-        className="w-full overflow-x-auto"
-        style={{ scrollbarWidth: "thin" }}
-      >
+      <div className="w-full overflow-x-auto" style={{ scrollbarWidth: "thin" }}>
         <div className="flex items-stretch justify-center gap-6 px-2 pb-3" style={{ height: 328 }}>
           {images.map((img, i) => (
             <button
@@ -91,7 +88,10 @@ export function SportzGalleryStrip({ title, images }: SportzGalleryStripProps) {
             {/* Close */}
             <button
               type="button"
-              onClick={(e) => { e.stopPropagation(); close(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                close();
+              }}
               className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
               aria-label="Close"
             >
@@ -101,7 +101,10 @@ export function SportzGalleryStrip({ title, images }: SportzGalleryStripProps) {
             {/* Prev */}
             <button
               type="button"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
               className="absolute left-4 z-10 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors"
               aria-label="Previous image"
             >
@@ -123,7 +126,10 @@ export function SportzGalleryStrip({ title, images }: SportzGalleryStripProps) {
             {/* Next */}
             <button
               type="button"
-              onClick={(e) => { e.stopPropagation(); next(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
               className="absolute right-4 z-10 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors"
               aria-label="Next image"
             >

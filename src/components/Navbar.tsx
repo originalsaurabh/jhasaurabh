@@ -6,7 +6,8 @@ import { ResumeButton } from "@/components/ResumeButton";
 export function Navbar() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion =
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const navLinks = [
     { to: "/about" as const, label: "About Me" },
@@ -17,7 +18,6 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4 relative">
-
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 group">
           <img
@@ -36,9 +36,7 @@ export function Navbar() {
               key={link.to}
               to={link.to}
               className={`text-xs sm:text-[16px] font-medium transition-colors hover:text-primary ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-foreground"
+                location.pathname === link.to ? "text-primary" : "text-foreground"
               }`}
             >
               {link.label}
@@ -54,7 +52,8 @@ export function Navbar() {
 
           {/* ✅ ORIGINAL BUTTON PRESERVED */}
           <Link to="/contact">
-            <div className="
+            <div
+              className="
               bg-[#3b2313]
               px-3 lg:px-[16px]
               h-[40px] sm:h-[47px]
@@ -65,7 +64,8 @@ export function Navbar() {
               font-medium
               transition-transform duration-200
               hover:scale-95
-            ">
+            "
+            >
               Let's Connect
             </div>
           </Link>
@@ -126,7 +126,6 @@ export function Navbar() {
             className="md:hidden px-4 pb-4"
           >
             <div className="flex flex-col gap-2 rounded-2xl bg-white p-3 shadow-lg">
-
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.to}
@@ -145,11 +144,9 @@ export function Navbar() {
               ))}
 
               {/* ✅ SAME ORIGINAL BUTTON IN MOBILE */}
-              <Link
-                to="/contact"
-                onClick={() => setMobileOpen(false)}
-              >
-                <div className="
+              <Link to="/contact" onClick={() => setMobileOpen(false)}>
+                <div
+                  className="
                   bg-[#3b2313]
                   px-[16px]
                   h-[47px]
@@ -160,11 +157,11 @@ export function Navbar() {
                   font-medium
                   transition-transform duration-200
                   hover:scale-95
-                ">
+                "
+                >
                   Let's Connect
                 </div>
               </Link>
-
             </div>
           </motion.div>
         )}

@@ -1,21 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
-import '@/styles.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import "@/styles.css";
 import ScrollToTop from "./components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Route components - import the default exports from route files
-import Home from '@/routes/index';
-import About from '@/routes/about';
-import Resume from '@/routes/resume';
-import Contact from '@/routes/contact';
-import CaseStudiesIndex from '@/routes/case-studies.index';
-import CaseStudiesAmazon from '@/routes/case-studies.amazon';
-import CaseStudiesComdaily from '@/routes/case-studies.comdaily';
-import CaseStudiesIBA from '@/routes/case-studies.iba-cosmetics';
-import CaseStudiesSaathi from '@/routes/case-studies.saathi-pads';
-import CaseStudiesSportz from '@/routes/case-studies.sportz-interactive';
-import CaseStudiesTaskSync from '@/routes/case-studies.tasksync';
+import Home from "@/routes/index";
+import About from "@/routes/about";
+import Resume from "@/routes/resume";
+import Contact from "@/routes/contact";
+import CaseStudiesIndex from "@/routes/case-studies.index";
+import CaseStudiesAmazon from "@/routes/case-studies.amazon";
+import CaseStudiesComdaily from "@/routes/case-studies.comdaily";
+import CaseStudiesIBA from "@/routes/case-studies.iba-cosmetics";
+import CaseStudiesSaathi from "@/routes/case-studies.saathi-pads";
+import CaseStudiesSportz from "@/routes/case-studies.sportz-interactive";
+import CaseStudiesTaskSync from "@/routes/case-studies.tasksync";
 
 // 404 component
 function NotFound() {
@@ -45,9 +46,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-1">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
@@ -73,6 +72,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
+      <SpeedInsights />
     </BrowserRouter>
   );
 }

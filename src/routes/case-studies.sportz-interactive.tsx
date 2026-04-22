@@ -30,14 +30,8 @@ import procamEndPlate from "@/assets/Projects/Sportz/Procam International/End-Pl
 import procamTcsw10k from "@/assets/Projects/Sportz/Procam International/TCSW10K.png";
 import procamTmm from "@/assets/Projects/Sportz/Procam International/TMM.png";
 import procamTsk from "@/assets/Projects/Sportz/Procam International/TSK-infographic.jpg";
-import {
-  Container,
-  Content,
-  CaseStudyHeader,
-  BackLink,
-} from "@/components/case-study.shared";
+import { Container, Content, CaseStudyHeader, BackLink } from "@/components/case-study.shared";
 import { SportzGalleryStrip } from "@/components/SportzGalleryStrip";
-
 
 const teams = [
   {

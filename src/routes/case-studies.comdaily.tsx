@@ -16,7 +16,6 @@ import {
   BackLink,
 } from "@/components/case-study.shared";
 
-
 function ComdailyPage() {
   return (
     <Container>
@@ -35,21 +34,24 @@ function ComdailyPage() {
         <Section>
           <H2>Project Overview</H2>
           <Body>
-            comdaily is an AI-powered brand monitoring platform that helps companies track their visibility across
-            emerging search engines such as ChatGPT and Perplexity.
+            comdaily is an AI-powered brand monitoring platform that helps companies track their
+            visibility across emerging search engines such as ChatGPT and Perplexity.
           </Body>
           <Body>
-            When I joined as a UX Design Intern, the product and marketing experiences lacked a shared visual
-            language. My primary responsibility was to design and implement comdaily's first scalable design
-            system, creating a consistent foundation that could support both rapid iteration and long-term
-            growth. I then applied the system to key marketing pages and core dashboard components to validate
-            its effectiveness.
+            When I joined as a UX Design Intern, the product and marketing experiences lacked a
+            shared visual language. My primary responsibility was to design and implement comdaily's
+            first scalable design system, creating a consistent foundation that could support both
+            rapid iteration and long-term growth. I then applied the system to key marketing pages
+            and core dashboard components to validate its effectiveness.
           </Body>
         </Section>
 
         <Section>
           <H2>The Problem</H2>
-          <Body>Before the design system, comdaily faced growing pains typical of an early-stage product.</Body>
+          <Body>
+            Before the design system, comdaily faced growing pains typical of an early-stage
+            product.
+          </Body>
           <H3>What was happening:</H3>
           <BulletList
             items={[
@@ -71,16 +73,19 @@ function ComdailyPage() {
         <Section>
           <H2>The Solution (High-Level)</H2>
           <Body>
-            I designed a comprehensive design system from scratch, including shared foundations, reusable
-            components, and clear usage guidelines. The system became the single source of truth for both
-            marketing and product UI, enabling faster page creation, predictable implementation, and a cohesive
-            brand experience.
+            I designed a comprehensive design system from scratch, including shared foundations,
+            reusable components, and clear usage guidelines. The system became the single source of
+            truth for both marketing and product UI, enabling faster page creation, predictable
+            implementation, and a cohesive brand experience.
           </Body>
         </Section>
 
         <Section>
           <H2>My Role &amp; Approach</H2>
-          <Body>I owned the design system end-to-end while collaborating closely with product managers and developers.</Body>
+          <Body>
+            I owned the design system end-to-end while collaborating closely with product managers
+            and developers.
+          </Body>
           <BulletList
             items={[
               "Conducted a full UI audit across product and marketing.",
@@ -90,13 +95,18 @@ function ComdailyPage() {
               "Iterated continuously based on developer feedback.",
             ]}
           />
-          <Body>My guiding principle was systems over screens — designing components that could scale beyond the initial use cases.</Body>
+          <Body>
+            My guiding principle was systems over screens — designing components that could scale
+            beyond the initial use cases.
+          </Body>
         </Section>
 
         <Section>
           <H2>Design Process — Discovery &amp; UI Audit</H2>
           <H3>Phase 1: Discovery &amp; UI Audit</H3>
-          <Body>I began by auditing existing screens to understand the scope of inconsistencies.</Body>
+          <Body>
+            I began by auditing existing screens to understand the scope of inconsistencies.
+          </Body>
           <H3>Key findings:</H3>
           <BulletList
             items={[
@@ -106,15 +116,19 @@ function ComdailyPage() {
               "Components rebuilt manually across pages",
             ]}
           />
-          <Body>This audit clarified that the problem wasn't individual screens, but the absence of a system.</Body>
+          <Body>
+            This audit clarified that the problem wasn't individual screens, but the absence of a
+            system.
+          </Body>
         </Section>
 
         <Section>
           <H2>Design Process — Foundations &amp; Research</H2>
           <H3>Phase 2: Foundations &amp; Research</H3>
           <Body>
-            I studied established systems like Material Design, Shopify Polaris, and Airbnb DLS to understand
-            best practices, then tailored decisions to comdaily's brand and product needs.
+            I studied established systems like Material Design, Shopify Polaris, and Airbnb DLS to
+            understand best practices, then tailored decisions to comdaily's brand and product
+            needs.
           </Body>
           <H3>Foundations established:</H3>
           <BulletList
@@ -158,15 +172,19 @@ function ComdailyPage() {
           className="w-full max-w-[900px] rounded-md"
           loading="lazy"
         />
-        <Section><H3>Buttons</H3></Section>
-        
+        <Section>
+          <H3>Buttons</H3>
+        </Section>
+
         <img
           src={componentLibraryOverview}
           alt="comdaily component library overview"
           className="w-full max-w-[900px] rounded-md"
           loading="lazy"
         />
-        <Section><H3>Navigation Bar</H3></Section>
+        <Section>
+          <H3>Navigation Bar</H3>
+        </Section>
         <img
           src={navigationBar}
           alt="comdaily navigation bar design"
@@ -178,9 +196,9 @@ function ComdailyPage() {
           <H2>Design Process — Application &amp; Validation (Marketing)</H2>
           <H3>Phase 4: Application &amp; Validation — Marketing Website</H3>
           <Body>
-            I applied the system across multiple live pages to validate flexibility and speed (Homepage, Use
-            Cases, Consulting, Pricing). Using predefined components allowed pages to be assembled quickly while
-            maintaining strong visual consistency.
+            I applied the system across multiple live pages to validate flexibility and speed
+            (Homepage, Use Cases, Consulting, Pricing). Using predefined components allowed pages to
+            be assembled quickly while maintaining strong visual consistency.
           </Body>
         </Section>
 
@@ -188,9 +206,9 @@ function ComdailyPage() {
           <H2>Design Process — Application &amp; Validation (Product)</H2>
           <H3>Product Dashboard</H3>
           <Body>
-            I also designed key dashboard sections using the same components (Metric cards, Tables, Comparison
-            views, Platform tracking interfaces). This ensured the system worked beyond marketing and held up
-            under real product complexity.
+            I also designed key dashboard sections using the same components (Metric cards, Tables,
+            Comparison views, Platform tracking interfaces). This ensured the system worked beyond
+            marketing and held up under real product complexity.
           </Body>
         </Section>
 
@@ -205,15 +223,24 @@ function ComdailyPage() {
               "Feedback loops that improved real-world feasibility",
             ]}
           />
-          <Body>This process significantly reduced clarification questions during development.</Body>
+          <Body>
+            This process significantly reduced clarification questions during development.
+          </Body>
         </Section>
 
         <Section>
           <H2>Impact &amp; Outcomes</H2>
           <H3>Design</H3>
-          <BulletList items={["New pages assembled in hours instead of days", "Consistent visual language across all surfaces"]} />
+          <BulletList
+            items={[
+              "New pages assembled in hours instead of days",
+              "Consistent visual language across all surfaces",
+            ]}
+          />
           <H3>Development</H3>
-          <BulletList items={["Predictable implementation patterns", "Fewer UI clarification questions"]} />
+          <BulletList
+            items={["Predictable implementation patterns", "Fewer UI clarification questions"]}
+          />
           <H3>Business &amp; Product</H3>
           <BulletList
             items={[
@@ -238,9 +265,10 @@ function ComdailyPage() {
         <Section>
           <H2>Reflection</H2>
           <Body>
-            Building comdaily's first design system reinforced that scalable design isn't about producing more
-            screens — it's about producing fewer decisions, repeated reliably. The clearest impact was less in
-            individual artefacts and more in the speed and confidence with which the team began to ship.
+            Building comdaily's first design system reinforced that scalable design isn't about
+            producing more screens — it's about producing fewer decisions, repeated reliably. The
+            clearest impact was less in individual artefacts and more in the speed and confidence
+            with which the team began to ship.
           </Body>
         </Section>
         <BackLink to="/case-studies">← Back to Case Studies</BackLink>
