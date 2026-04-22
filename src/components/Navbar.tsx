@@ -35,7 +35,7 @@ export function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-xs sm:text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-xs sm:text-[16px] font-medium transition-colors hover:text-primary ${
                 location.pathname === link.to
                   ? "text-primary"
                   : "text-foreground"
