@@ -29,32 +29,38 @@ import ibaRightHover from "@/assets/Card images/iba right hover.png";
 
 const testimonials = [
   {
-    quote: "Saurabh brought much-needed structure to our design process early on. He built a design system that improved consistency and reduced developer back-and-forth. What stood out was his ability to challenge ideas constructively and think beyond execution.",
+    quote:
+      "Saurabh brought much-needed structure to our design process early on. He built a design system that improved consistency and reduced developer back-and-forth. What stood out was his ability to challenge ideas constructively and think beyond execution.",
     name: "Ellen Martin",
     role: "Co-Founder at comdaily",
   },
   {
-    quote: "Thank you! Excellent work and communication! He was able to quickly complete the project to my vision!! Will definitely work again in the future!",
+    quote:
+      "Thank you! Excellent work and communication! He was able to quickly complete the project to my vision!! Will definitely work again in the future!",
     name: "Carolin Lengersdorf",
     role: "MICARAA GmbH",
   },
   {
-    quote: "Our conversion rate went from ~1.8% to 3.4%, and checkout drop-offs dropped by ~22%. Sessions were also up ~35%. Saurabh has been quite instrumental with his UI/UX work on my website. He focused on real user behavior, not just visuals, and delivered fast, clean iterations. Reliable and actually moves numbers.",
+    quote:
+      "Our conversion rate went from ~1.8% to 3.4%, and checkout drop-offs dropped by ~22%. Sessions were also up ~35%. Saurabh has been quite instrumental with his UI/UX work on my website. He focused on real user behavior, not just visuals, and delivered fast, clean iterations. Reliable and actually moves numbers.",
     name: "Shreyans Jain",
     role: "Head of Sales, Saathi Pads",
   },
   {
-    quote: "Saurabh quickly identified issues in our purchase flow and improved them without being explicitly asked. His work was practical, user-focused, and contributed to stronger engagement and overall performance.",
+    quote:
+      "Saurabh quickly identified issues in our purchase flow and improved them without being explicitly asked. His work was practical, user-focused, and contributed to stronger engagement and overall performance.",
     name: "Mehleka Bhaisaheb",
     role: "Digital Marketing Manager,IBA Cosmetics",
   },
   {
-    quote: "Saurabh handled multiple campaigns under pressure while keeping focus on what actually worked for users. His work on the website directly improved conversions and reduced drop-offs.",
+    quote:
+      "Saurabh handled multiple campaigns under pressure while keeping focus on what actually worked for users. His work on the website directly improved conversions and reduced drop-offs.",
     name: "Khushali Samriya",
     role: "Communication Manager, Saathi Pads",
   },
   {
-    quote: "Saurabh is very responsive and is a pleasure to work with. I look forward to continue working with you guys going forward!",
+    quote:
+      "Saurabh is very responsive and is a pleasure to work with. I look forward to continue working with you guys going forward!",
     name: "Ricardo",
     role: "Founder, Bannerfi",
   },
@@ -72,7 +78,10 @@ const brands = [
   { name: "Mondelēz", logo: "/brand/Mondelēz International_id5rKWAECb_0.svg" },
   { name: "Logo", logo: "/brand/Logo.svg" },
   { name: "Transparent", logo: "/brand/Transparent_logo_white_720x.webp" },
-  { name: "MICARAA", logo: "/brand/micaraa-Logo-RGB_mit-Slogan-1000px_8726c8df-96b6-4a93-8d6a-aab01b201b39_400x.avif" },
+  {
+    name: "MICARAA",
+    logo: "/brand/micaraa-Logo-RGB_mit-Slogan-1000px_8726c8df-96b6-4a93-8d6a-aab01b201b39_400x.avif",
+  },
   { name: "SI", logo: "/brand/si-logo.svg" },
   { name: "Logos 1", logo: "/brand/idBb09CBkC_logos.png" },
   { name: "Logos 2", logo: "/brand/idLbJxDHSd_1771767311359.png" },
@@ -118,15 +127,20 @@ function HomePage() {
           </h1>
 
           <p className="max-w-2xl text-[24px] font-medium leading-[34.8px] text-black/55">
-            I design interfaces, systems, and experiences that make products easier to use and easier to scale.
+            I design interfaces, systems, and experiences that make products easier to use and
+            easier to scale.
           </p>
 
           <div className="flex items-center gap-4">
             <Link to="/case-studies">
-              <Button variant="hero" size="lg">View Work</Button>
+              <Button variant="hero" size="lg">
+                View Work
+              </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="heroOutline" size="lg">Get in Touch!</Button>
+              <Button variant="heroOutline" size="lg">
+                Get in Touch!
+              </Button>
             </Link>
           </div>
         </motion.div>
@@ -135,14 +149,16 @@ function HomePage() {
       {/* Brand Strip */}
       <section className="overflow-hidden border-y border-border bg-card py-5">
         <div className="flex animate-scroll items-center gap-12 whitespace-nowrap px-6">
-          {Array.from({ length: 3 }).flatMap(() => brands).map((brand, i) => (
-            <img
-              key={i}
-              src={brand.logo}
-              alt={brand.name}
-              className="h-8 md:h-10 w-auto flex-shrink-0 object-contain"
-            />
-          ))}
+          {Array.from({ length: 3 })
+            .flatMap(() => brands)
+            .map((brand, i) => (
+              <img
+                key={i}
+                src={brand.logo}
+                alt={brand.name}
+                className="h-8 md:h-10 w-auto flex-shrink-0 object-contain"
+              />
+            ))}
         </div>
       </section>
 
@@ -151,7 +167,9 @@ function HomePage() {
         <div className="mb-10 flex items-center justify-between">
           <h2 className="text-3xl md:text-4xl">Featured Projects</h2>
           <Link to="/case-studies">
-            <Button variant="outline" size="sm">View All</Button>
+            <Button variant="outline" size="sm">
+              View All
+            </Button>
           </Link>
         </div>
 
@@ -222,16 +240,12 @@ function HomePage() {
                 className="inline-flex w-[440px] flex-shrink-0 whitespace-normal rounded-xl bg-card p-6 flex-col"
               >
                 {/* Quote */}
-                <p className="text-sm leading-relaxed text-foreground">
-                  "{t.quote}"
-                </p>
+                <p className="text-sm leading-relaxed text-foreground">"{t.quote}"</p>
 
                 {/* Footer (bottom aligned) */}
                 <div className="mt-auto pt-6 flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                    <span className="text-xs font-medium text-primary">
-                      {t.name[0]}
-                    </span>
+                    <span className="text-xs font-medium text-primary">{t.name[0]}</span>
                   </div>
                   <div>
                     <p className="text-sm font-medium">{t.name}</p>
@@ -246,6 +260,5 @@ function HomePage() {
     </div>
   );
 }
-
 
 export default HomePage;

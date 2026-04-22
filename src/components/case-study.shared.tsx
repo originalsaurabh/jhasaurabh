@@ -49,33 +49,34 @@ export function CaseStudyHeader({
     { icon: <SkillsIcon />, label: "Leveraged Skills", value: skills },
   ];
 
-  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion =
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   return (
     <>
-        <motion.div
+      <motion.div
         initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4 }}
         style={{
-            width: "100vw",
-            background: coverBackground,
+          width: "100vw",
+          background: coverBackground,
         }}
-        >
+      >
         <div className="flex justify-center">
-            <div className="w-full max-w-[1280px]">
+          <div className="w-full max-w-[1280px]">
             <img
-                src={cover}
-                alt={coverAlt}
-                className="w-full object-cover"
-                style={{
+              src={cover}
+              alt={coverAlt}
+              className="w-full object-cover"
+              style={{
                 height: "auto",
                 aspectRatio: "1280 / 690",
-                }}
+              }}
             />
-            </div>
+          </div>
         </div>
-        </motion.div>
+      </motion.div>
 
       <header className="w-full flex flex-col items-center py-6 sm:py-8 md:py-10 gap-3 sm:gap-4">
         <H1>{title}</H1>
@@ -210,13 +211,7 @@ export function Section({ children }: { children: ReactNode }) {
   return <div className="w-full max-w-[900px] space-y-3">{children}</div>;
 }
 
-export function Placeholder({
-  label,
-  height = 337,
-}: {
-  label: string;
-  height?: number;
-}) {
+export function Placeholder({ label, height = 337 }: { label: string; height?: number }) {
   return (
     <div
       className="w-full max-w-[900px] rounded-md flex items-center justify-center"
@@ -246,13 +241,23 @@ export function BackLink({ to, children }: { to: string; children: ReactNode }) 
 const TimelineIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
     <rect x="2.5" y="3.75" width="15" height="13.75" rx="2" stroke="#000" strokeWidth="1.5" />
-    <path d="M2.5 7.5h15M6.25 2.5v2.5M13.75 2.5v2.5" stroke="#000" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M2.5 7.5h15M6.25 2.5v2.5M13.75 2.5v2.5"
+      stroke="#000"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 const RoleIcon = () => (
   <svg width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden>
     <circle cx="9" cy="6" r="3.25" stroke="#100F0D" strokeWidth="1.5" />
-    <path d="M2.5 18c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5" stroke="#100F0D" strokeWidth="1.5" strokeLinecap="round" />
+    <path
+      d="M2.5 18c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"
+      stroke="#100F0D"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
   </svg>
 );
 const SkillsIcon = () => (

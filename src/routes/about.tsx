@@ -12,7 +12,6 @@ import projectcomdaily from "@/assets/icons/favicon.png";
 import projectiba from "@/assets/icons/iba.png";
 import projectDC from "@/assets/icons/DC.png";
 
-
 type Side = "left" | "right";
 
 type Paragraph = {
@@ -21,7 +20,7 @@ type Paragraph = {
     src: string;
     side: Side;
     alt: string;
-    size?: number;   // 👈 per-image size
+    size?: number; // 👈 per-image size
     offset?: number; // 👈 per-image horizontal adjustment
   }[];
 };
@@ -40,68 +39,70 @@ function AboutPage() {
     {
       text: (
         <>
-          Not just visually, but structurally.<br />
-          Why some experiences feel effortless.<br />
+          Not just visually, but structurally.
+          <br />
+          Why some experiences feel effortless.
+          <br />
           Why others make you stop, think, or struggle.
         </>
       ),
       images: [{ src: projectarch, side: "right", alt: "", offset: -60, size: 200 }],
     },
     {
-      text:
-        "Over time I realized that behind every good experience there's always a quiet layer of thoughtful design. That curiosity is what eventually led me to UX.",
+      text: "Over time I realized that behind every good experience there's always a quiet layer of thoughtful design. That curiosity is what eventually led me to UX.",
       images: [{ src: projectgears, side: "left", alt: "" }],
     },
     {
       text: (
         <>
-          Design, for me, is about clarity.<br />
+          Design, for me, is about clarity.
+          <br />
           Not decoration.
         </>
       ),
     },
     {
-      text:
-        "It's about taking something complex; a system, a workflow, a product; and shaping it until it becomes simple enough for someone else to use without thinking about it. That moment when something just works is what I find beautiful.",
+      text: "It's about taking something complex; a system, a workflow, a product; and shaping it until it becomes simple enough for someone else to use without thinking about it. That moment when something just works is what I find beautiful.",
       images: [{ src: projectstart, side: "right", alt: "", offset: -60, size: 200 }],
     },
     {
       text: (
         <>
-          <strong>My path into UX wasn't linear.</strong><br />
-          I started my career in visual and brand design, learning how communication, identity, and aesthetics shape how people experience a product.
+          <strong>My path into UX wasn't linear.</strong>
+          <br />I started my career in visual and brand design, learning how communication,
+          identity, and aesthetics shape how people experience a product.
         </>
       ),
       images: [{ src: projectgif, side: "left", alt: "", offset: -60, size: 180 }],
     },
     {
-      text:
-        "Later, working across digital design, marketing, and operations, I began seeing the bigger picture; how design decisions connect to real business systems and user behavior.",
+      text: "Later, working across digital design, marketing, and operations, I began seeing the bigger picture; how design decisions connect to real business systems and user behavior.",
     },
     {
       text: (
         <>
-          That shift pushed me toward product design and UX strategy.<br />
-          Over time, I found myself drawn to systems.<br />
-          Design systems.<br />
-          Operational systems.<br />
+          That shift pushed me toward product design and UX strategy.
+          <br />
+          Over time, I found myself drawn to systems.
+          <br />
+          Design systems.
+          <br />
+          Operational systems.
+          <br />
           Product ecosystems.
         </>
       ),
       images: [{ src: projectUX, side: "right", alt: "", offset: -90, size: 240 }],
     },
     {
-      text:
-        "The invisible frameworks that allow products and teams to scale without losing consistency. I enjoy building those foundations; the things that make future work easier, faster, and clearer.",
+      text: "The invisible frameworks that allow products and teams to scale without losing consistency. I enjoy building those foundations; the things that make future work easier, faster, and clearer.",
     },
     {
       text: (
         <>
-          <strong>
-            My work today sits at the intersection of craft, structure, and empathy.
-          </strong>
-          <br />
-          I combine visual design, UX thinking, and systems perspective to design products that are intuitive for users and sustainable for teams.
+          <strong>My work today sits at the intersection of craft, structure, and empathy.</strong>
+          <br />I combine visual design, UX thinking, and systems perspective to design products
+          that are intuitive for users and sustainable for teams.
         </>
       ),
       images: [
@@ -110,35 +111,27 @@ function AboutPage() {
       ],
     },
     {
-      text:
-        "Recently, I've worked on projects like, building a design system from 0 → 1, designing product dashboards and digital platforms, and improving operational workflows through systems thinking.",
+      text: "Recently, I've worked on projects like, building a design system from 0 → 1, designing product dashboards and digital platforms, and improving operational workflows through systems thinking.",
       images: [
         { src: projectSI, side: "left", alt: "", offset: 0, size: 70 },
         { src: projectcomdaily, side: "right", offset: 40, alt: "", size: 70 },
       ],
     },
     {
-      text:
-        "Each project reinforces the same idea: good design isn't just what people see. It's how the entire experience fits together.",
+      text: "Each project reinforces the same idea: good design isn't just what people see. It's how the entire experience fits together.",
       images: [
         { src: projectiba, side: "left", alt: "", offset: -70, size: 70 },
         { src: projectDC, side: "right", alt: "", offset: -80, size: 70 },
       ],
     },
     {
-      text:
-        "I'm currently based in Europe and open to opportunities where I can contribute to thoughtful product design, scalable design systems, and teams that care about building meaningful digital experiences.",
+      text: "I'm currently based in Europe and open to opportunities where I can contribute to thoughtful product design, scalable design systems, and teams that care about building meaningful digital experiences.",
     },
     {
-      text:
-        "Because at the end of the day, I believe design is really about helping people move through the world with less friction.",
+      text: "Because at the end of the day, I believe design is really about helping people move through the world with less friction.",
     },
     {
-      text: (
-        <strong>
-          And I'm always curious about what we can improve next.
-        </strong>
-      ),
+      text: <strong>And I'm always curious about what we can improve next.</strong>,
     },
   ];
 
@@ -172,9 +165,7 @@ function AboutPage() {
                     objectFit: "contain",
                     top: "50%",
                     transform: "translateY(-50%)",
-                    ...(img.side === "left"
-                      ? { left: finalOffset }
-                      : { right: finalOffset }),
+                    ...(img.side === "left" ? { left: finalOffset } : { right: finalOffset }),
                   }}
                 />
               );

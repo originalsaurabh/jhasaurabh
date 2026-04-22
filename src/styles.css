@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @font-face {
-  font-family: 'Canela Deck';
-  src: url('/fonts/CanelaDeck-Bold.otf') format('opentype');
+  font-family: "Canela Deck";
+  src: url("/fonts/CanelaDeck-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -95,8 +94,8 @@
   --sidebar-border: oklch(0.85 0.02 80);
   --sidebar-ring: oklch(0.55 0.24 30);
   --warm-beige: oklch(0.95 0.02 85);
-  --font-family-display: 'Canela Deck', serif;
-  --font-family-body: 'Inter', sans-serif;
+  --font-family-display: "Canela Deck", serif;
+  --font-family-body: "Inter", sans-serif;
 }
 
 @layer base {
@@ -110,14 +109,21 @@
     font-family: var(--font-family-body);
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-family-display);
   }
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
@@ -125,8 +131,12 @@
 }
 
 @keyframes scroll-testimonials {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll-testimonials {
@@ -149,18 +159,58 @@
 
 /* Available Now — blink halo (matches Figma blink-on / blink-off frames) */
 @keyframes blink-halo {
-  0%, 9% { opacity: 0; transform: scale(0.1); }
-  10%, 19% { opacity: 0.2; transform: scale(0.2); }
-  20%, 29% { opacity: 0.3; transform: scale(0.3); }
-  30%, 39% { opacity: 0.4; transform: scale(0.4); }
-  40%, 49% { opacity: 0.5; transform: scale(0.5); }
-  50%, 59% { opacity: 0.6; transform: scale(0.6); }
-  60%, 69% { opacity: 0.7; transform: scale(0.7); }
-  70%, 79% { opacity: 0.8; transform: scale(0.8); }
-  80%, 89% { opacity: 0.9; transform: scale(0.9); }
-  90%, 100% { opacity: 1; transform: scale(1); }
+  0%,
+  9% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  10%,
+  19% {
+    opacity: 0.2;
+    transform: scale(0.2);
+  }
+  20%,
+  29% {
+    opacity: 0.3;
+    transform: scale(0.3);
+  }
+  30%,
+  39% {
+    opacity: 0.4;
+    transform: scale(0.4);
+  }
+  40%,
+  49% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  50%,
+  59% {
+    opacity: 0.6;
+    transform: scale(0.6);
+  }
+  60%,
+  69% {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  70%,
+  79% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  80%,
+  89% {
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+  90%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-blink-halo {
-  animation: blink-halo 1.0s steps(1, end) infinite;
+  animation: blink-halo 1s steps(1, end) infinite;
 }
