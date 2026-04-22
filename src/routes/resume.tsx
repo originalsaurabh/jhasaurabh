@@ -503,4 +503,4 @@ function ResumeSection({ label, children }: { label: string; children: React.Rea
 }
 
 
-export default ResumeSection;
+export default ResumePage;
